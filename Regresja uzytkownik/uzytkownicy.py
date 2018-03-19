@@ -32,6 +32,9 @@ __regulamin_zaakceptowany_filtr = "//*[@id='terms']"
 # Typ Uzytkuwnika
 __typ_uzytkownika_filtr = "//*[@id='type']"
 
+# Lista Uzytkownikow
+__lista_uzytkownikow = "//*[@id='widget-grid']/div[2]/article/div[1]/table/tbody"
+
 
 def check_uzytkownik_logo(driver_instance, text):
     elem = wait_for_visibility_of_element(
@@ -98,3 +101,16 @@ def check_uzytkownik_typ_uzytkownika_filtr(driver_instance):
     )
     print('wszystko super :D')
     return elem
+
+def count_uzytkownikow_w_tabeli(driver_instance):
+    elems = wait_for_visibility_of_all_elements(
+        driver_instance=driver_instance,
+        xpath=__lista_uzytkownikow
+    )
+    return len(elems)
+
+def hit_enter_on_dodaj_button(driver_instance):
+    click_enter_on_element(
+        driver_instance = driver_instance,
+        xpath=__dodaj_button
+    )
