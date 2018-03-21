@@ -2,6 +2,7 @@
 
 import logowanie, pulpit, uzytkownicy, nowy_uzytkownik
 import unittest
+import random
 from selenium import webdriver
 
 
@@ -66,18 +67,29 @@ class tests(unittest.TestCase):
         uzytkownicy.hit_enter_on_dodaj_button(self.driver)
 
 ############# Nowy Uzytkownik ######################
+        user_number = str(random.randint(0, 10000000))
+        user_name = 'test' + user_number
+        user_name_last_name = user_name + ' ' + user_name
+        user_email = user_name + '@o2.pl'
+        user_telefon_number = '123456789'
         self.assertTrue(
             nowy_uzytkownik.check_logo_utworz_uzytkownik(self.driver, u'Użytkownik > Utwórz')
         )
         self.assertTrue(
             nowy_uzytkownik.check_dodaj_uzytkownik_button(self.driver)
-
         )
         self.assertTrue(
             nowy_uzytkownik.check_anuluj_button(self.driver)
         )
-
+        print('test' + str(random.randint(0, 10000000)))
+        nowy_uzytkownik.input_text_to_nazwa_uzytkownika_xpath(self.driver, user_name)
+        nowy_uzytkownik.input_text_to_email_xpath(self.driver, user_email)
+        nowy_uzytkownik.input_text_to_imie_i_nazwisko_xpath(self.driver, user_name_last_name)
+        nowy_uzytkownik.input_text_to_telefon_xpath(self.driver, user_telefon_number)
         nowy_uzytkownik.click_jezyk_polski_xpath(self.driver)
+        nowy_uzytkownik.click_aktywny_tak_xpath(self.driver)
+        nowy_uzytkownik.click_regulamin_zaakceptowany_tak_xpath(self.driver)
+        nowy_uzytkownik.click_typ_uzytkownika_wewnetrzny(self.driver)
         nowy_uzytkownik.hit_enter_on_anuluj_button(self.driver)
 
 ############# Uzytkownicy ##########
@@ -90,7 +102,8 @@ class tests(unittest.TestCase):
         num_uzytkownikow_po_dodaniu = uzytkownicy.count_uzytkownikow_w_tabeli(self.driver)
         # # Porownanie
         self.assertItemEqual(num_uzytkownikow, num_uzytkownikow_po_dodaniu)
-
+        # # # Asercja
+        # self.assertGreater(num_uzytkownikow, num_uzytkownikow_po_dodaniu)
     def assertItemEqual(self, num_uzytkownikow, num_uzytkownikow_po_dodaniu):
         pass
 
@@ -98,8 +111,6 @@ class tests(unittest.TestCase):
 
 
 
-        # # # Asercja
-        # self.assertGreater(num_uzytkownikow, num_uzytkownikow_po_dodaniu)
 
 if __name__ == "__main__":
     unittest.main()

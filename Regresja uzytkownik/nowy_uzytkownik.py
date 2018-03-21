@@ -18,13 +18,13 @@ __dodaj_uzytkownika_button = "//*[@id='admin_user_manage']/footer/button"
 __to_pole_jest_wymagane = "//*[@id='username-error']"
 
 # Pole Nazwa Uzytkownika
-__nazwa_uzytkownika_xpath = "//*[@id='dmin_user_manage']/fieldset[1]/div[2]/section[1]/label[2]/input"
+__nazwa_uzytkownika_xpath = "//*[@id='admin_user_manage']/fieldset[1]/div[2]/section[1]/label[2]/input"
 
 # Pole Email
 __email_xpath = "//*[@id='admin_user_manage']/fieldset[1]/div[2]/section[2]/label[2]/input"
 
 # Pole Imie i Nazwisko
-__imie_i_nazwisko_xpath = "//*[@id='dmin_user_manage']/fieldset[1]/div[2]/section[3]/label[2]/input"
+__imie_i_nazwisko_xpath = "//*[@id='admin_user_manage']/fieldset[1]/div[2]/section[3]/label[2]/input"
 
 # Pole Telefon
 __telefon_xpath = "//*[@id='admin_user_manage']/fieldset[2]/div/section[1]/label[2]/input"
@@ -101,6 +101,13 @@ def check_to_pole_jest_wymagane(driver_instance):
     )
     return elem
 
+def check_nazwa_uzytkownika_xpath(driver_instance):
+    elem = wait_for_visibility_of_element(
+        driver_instance=driver_instance,
+        xpath=__nazwa_uzytkownika_xpath
+    )
+    return elem
+
 def hit_enter_on_anuluj_button(driver_instance):
     click_enter_on_element(
         driver_instance = driver_instance,
@@ -145,5 +152,68 @@ def click_jezyk_polski_xpath(driver_instance):
     elem = wait_for_presence_of_element(
         driver_instance=driver_instance,
         xpath=__jezyk_polski_xpath
+    )
+    elem.click()
+
+def click_jezyk_angielski_xpath(driver_instance):
+    elem = wait_for_presence_of_element(
+        driver_instance=driver_instance,
+        xpath=__jezyk_angielski_xpath
+    )
+    elem.click()
+
+def click_aktywny_tak_xpath(driver_instance):
+    elem = wait_for_presence_of_element(
+        driver_instance=driver_instance,
+        xpath=__aktywny_tak_xpath
+    )
+    elem.click()
+
+def click_aktywny_nie_xpath(driver_instance):
+    elem = wait_for_presence_of_element(
+        driver_instance=driver_instance,
+        xpath=__aktywny_nie_xpath
+    )
+    elem.click()
+
+def click_regulamin_zaakceptowany_tak_xpath(driver_instance):
+    elem = wait_for_presence_of_element(
+        driver_instance=driver_instance,
+        xpath=__regulamin_zaakceptowany_tak_xpath
+    )
+    elem.click()
+
+def click_regulamin_zaakceptowany_nie_xpath(driver_instance):
+    elem = wait_for_presence_of_element(
+        driver_instance=driver_instance,
+        xpath=__regulamin_zaakceptowany_nie_xpath
+    )
+    elem.click()
+
+def click_typ_uzytkownika_wewnetrzny(driver_instance):
+    elem = wait_for_presence_of_element(
+        driver_instance=driver_instance,
+        xpath=__typ_uzytkownika_wewnetrzny
+    )
+    elem.click()
+
+def click_typ_uzytkownika_zewnetrzny(driver_instance):
+    elem = wait_for_presence_of_element(
+        driver_instance=driver_instance,
+        xpath=__typ_uzytkownika_zewnetrzny
+    )
+    elem.click()
+
+def click_typ_uzytkownika_wspolpracownik(driver_instance):
+    elem = wait_for_presence_of_element(
+        driver_instance=driver_instance,
+        xpath=__typ_uzytkownika_wspolpracownik
+    )
+    elem.click()
+
+def click_typ_uzytkownika_gosc(driver_instance):
+    elem = wait_for_presence_of_element(
+        driver_instance=driver_instance,
+        xpath=__typ_uzytkownika_gosc
     )
     elem.click()
