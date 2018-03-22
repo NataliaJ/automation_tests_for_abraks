@@ -4,7 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 
-def wait_for_visibility_of_element(driver_instance, xpath, time_to_wait=8):
+def wait_for_visibility_of_element(driver_instance, xpath, time_to_wait=5):
     elem = WebDriverWait(driver_instance, time_to_wait).until(
         EC.visibility_of_element_located((By.XPATH, xpath))
     )

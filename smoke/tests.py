@@ -191,7 +191,77 @@ class tests(unittest.TestCase):
         self.assertTrue(
             sekretariat.check_sekretariat_tabela(self.driver)
         )
-     #   klienci.hit_enter_on_ostrzezenia_button(self.driver)
+        admin.hit_enter_on_admin_button(self.driver)
+        self.assertTrue(
+            admin.check_hitting_results_are_correct_role(self.driver, 'Role')
+        )
+        admin.hit_enter_on_admin_role_button(self.driver)
+
+###################### Admin ###############
+
+############## Role ###############
+        self.assertTrue(
+            admin.check_url_contains_correct_name_page(self.driver, 'http://integracja.abraks.pl/admin/role')
+        )
+        self.assertTrue(
+            admin.check_admin_logo(self.driver, u'Rola > Indeks')
+        )
+        self.assertTrue(
+            admin.check_admin_tabela(self.driver)
+        )
+        admin.hit_enter_on_admin_uprawnienia_button(self.driver)
+
+############## Uprawnienia ###############
+        self.assertTrue(
+            admin.check_url_contains_correct_name_page(self.driver, 'http://integracja.abraks.pl/admin/permission')
+        )
+        self.assertTrue(
+            admin.check_admin_logo(self.driver, u'Uprawnienie > Indeks')
+        )
+        self.assertTrue(
+            admin.check_admin_tabela(self.driver)
+        )
+        admin.hit_enter_on_admin_uzytkownicy_button(self.driver)
+
+############## Uzytkownicy ###############
+        self.assertTrue(
+            admin.check_url_contains_correct_name_page(self.driver, 'http://integracja.abraks.pl/admin/user')
+        )
+        self.assertTrue(
+            admin.check_admin_logo(self.driver, u'Użytkownik > Indeks')
+        )
+        self.assertTrue(
+            admin.check_admin_tabela(self.driver)
+        )
+        admin.hit_enter_on_admin_strony_button(self.driver)
+
+############## Strony ###############
+        self.assertTrue(
+            admin.check_url_contains_correct_name_page(self.driver, 'http://integracja.abraks.pl/admin/page')
+        )
+        self.assertTrue(
+            admin.check_admin_logo(self.driver, u'Strona > Indeks')
+        )
+        self.assertTrue(
+            admin.check_admin_tabela(self.driver)
+        )
+        admin.hit_enter_on_admin_ustawienia_button(self.driver)
+
+############## Ustawienia ###############
+        self.assertTrue(
+            admin.check_url_contains_correct_name_page(self.driver, 'http://integracja.abraks.pl/admin/setting')
+        )
+        self.assertTrue(
+            admin.check_admin_logo(self.driver, u'Ustawienie > Indeks')
+        )
+        self.assertTrue(
+            admin.check_admin_ustawienia_tabela(self.driver)
+        )
+        admin.hit_enter_on_log_out_button(self.driver)
+        self.assertTrue(logowanie.check_top_logo_bar_is_visible(self.driver))
+        self.assertTrue(
+            admin.check_url_contains_correct_name_page(self.driver, 'http://integracja.abraks.pl/login')
+        )
 
 
 if __name__ == "__main__":
