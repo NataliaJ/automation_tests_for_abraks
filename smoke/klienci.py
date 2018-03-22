@@ -5,10 +5,10 @@ from support_funcs import *
 
 # Xpaths
 
-# Logo
+# Logo - taki sam xpath na kazdej stronie
 __klienci_logo = "//*[@id='content']/div/div/h1"
 
-# Tabela
+# Tabela - taki sam xpath na kazdej stronie
 __klienic_tabela = "//*[@id='widget-grid']/div[2]/article/div[1]/table"
 
 # Oddzialy button
@@ -21,8 +21,8 @@ __klienci_osoby_kontaktowe_button = "//*[@id='left-panel']/nav/ul/li[2]/ul/li[3]
 __klienci_ostrzezenia_button = "//*[@id='left-panel']/nav/ul/li[2]/ul/li[4]/a"
 
 # Sekretariat button in menu
-__pulpit_klienci_button_xpath = "//*[@id='left-panel']/nav/ul/li[2]/a/span"
-__pulpit_klienci_xpath = "//*[@id='left-panel']/nav/ul/li[2]/a"
+__pulpit_sekretariat_button_xpath = "//*[@id='left-panel']/nav/ul/li[3]/a/span"
+__pulpit_sekretariat_xpath = "//*[@id='left-panel']/nav/ul/li[3]/a"
 
 def check_klienci_logo(driver_instance, text):
     elem = wait_for_visibility_of_element(
