@@ -77,7 +77,6 @@ def check_logo_utworz_uzytkownik(driver_instance, text):
         xpath=__logo_utworz_uzytkownik
     )
     elem_text = elem.text
-    print(elem_text)
     return elem_text == text
 
 def check_anuluj_button(driver_instance):

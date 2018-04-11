@@ -24,7 +24,6 @@ def check_loging_results_are_correct(driver_instance, text):
         xpath=__pulpit_logo_xpath
     )
     elem_text = elem.text
-    print(elem_text)
     return elem_text == text
 
 def check_loging_results_are_correct_admin(driver_instance, text):
@@ -33,7 +32,6 @@ def check_loging_results_are_correct_admin(driver_instance, text):
         xpath=__pulpit_admin_button_xpath
     )
     elem_text = elem.text
-    print(elem_text)
     return elem_text == text
 
 def hit_enter_on_admin_button(driver_instance):
@@ -48,7 +46,6 @@ def check_hitting_results_are_correct_uzytkownicy(driver_instance, text):
         xpath=__pulpit_uzytkownicy_button_xpath
     )
     elem_text = elem.text
-    print(elem_text)
     return elem_text == text
 
 def hit_enter_on_uzytkownicy_button(driver_instance):

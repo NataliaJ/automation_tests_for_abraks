@@ -42,7 +42,6 @@ def check_uzytkownik_logo(driver_instance, text):
         xpath=__uzytkownik_logo
     )
     elem_text = elem.text
-    print(elem_text)
     return elem_text == text
 
 def check_uzytkownik_tabela(driver_instance):
@@ -99,7 +98,6 @@ def check_uzytkownik_typ_uzytkownika_filtr(driver_instance):
         driver_instance = driver_instance,
         xpath = __typ_uzytkownika_filtr
     )
-    print('wszystko super :D')
     return elem
 
 def count_uzytkownikow_w_tabeli(driver_instance):

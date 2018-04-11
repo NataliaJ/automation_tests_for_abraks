@@ -50,7 +50,6 @@ def check_hitting_results_are_correct_dokumenty(driver_instance, text):
         xpath=__sekretariat_dokumenty_button
     )
     elem_text = elem.text
-    print(elem_text)
     return elem_text == text
 
 def hit_enter_on_sekretariat_dokumenty_button(driver_instance):
@@ -65,7 +64,6 @@ def check_sekretariat_logo(driver_instance, text):
         xpath=__sekretariat_logo
     )
     elem_text = elem.text
-    print(elem_text)
     return elem_text == text
 
 def check_sekretariat_tabela(driver_instance):

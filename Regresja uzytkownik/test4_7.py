@@ -62,7 +62,6 @@ class tests(unittest.TestCase):
             uzytkownicy.check_uzytkownik_dodaj_button(self.driver)
         )
         num_uzytkownikow = uzytkownicy.count_uzytkownikow_w_tabeli(self.driver)
-        print (num_uzytkownikow)
 
         uzytkownicy.hit_enter_on_dodaj_button(self.driver)
 
@@ -81,7 +80,6 @@ class tests(unittest.TestCase):
         self.assertTrue(
             nowy_uzytkownik.check_anuluj_button(self.driver)
         )
-        print('test' + str(random.randint(0, 10000000)))
         nowy_uzytkownik.input_text_to_nazwa_uzytkownika_xpath(self.driver, user_name)
         nowy_uzytkownik.input_text_to_email_xpath(self.driver, user_email)
         nowy_uzytkownik.input_text_to_imie_i_nazwisko_xpath(self.driver, user_name_last_name)
@@ -90,7 +88,7 @@ class tests(unittest.TestCase):
         nowy_uzytkownik.click_aktywny_tak_xpath(self.driver)
         nowy_uzytkownik.click_regulamin_zaakceptowany_tak_xpath(self.driver)
         nowy_uzytkownik.click_typ_uzytkownika_wewnetrzny(self.driver)
-        nowy_uzytkownik.hit_enter_on_anuluj_button(self.driver)
+        nowy_uzytkownik.hit_enter_on_dodaj_uzytkownik_button(self.driver)
 
 ############# Uzytkownicy ##########
         self.assertTrue(
@@ -100,12 +98,9 @@ class tests(unittest.TestCase):
             uzytkownicy.check_uzytkownik_tabela(self.driver)
         )
         num_uzytkownikow_po_dodaniu = uzytkownicy.count_uzytkownikow_w_tabeli(self.driver)
-        # # Porownanie
-        self.assertItemEqual(num_uzytkownikow, num_uzytkownikow_po_dodaniu)
+
         # # # Asercja
-        # self.assertGreater(num_uzytkownikow, num_uzytkownikow_po_dodaniu)
-    def assertItemEqual(self, num_uzytkownikow, num_uzytkownikow_po_dodaniu):
-        pass
+        self.assertGreater(num_uzytkownikow, num_uzytkownikow_po_dodaniu)
 
     def test_R_Test_5(self):
         input_text = "tester@abraks.pl"
@@ -153,7 +148,6 @@ class tests(unittest.TestCase):
             uzytkownicy.check_uzytkownik_dodaj_button(self.driver)
         )
         num_uzytkownikow = uzytkownicy.count_uzytkownikow_w_tabeli(self.driver)
-        print (num_uzytkownikow)
 
         uzytkownicy.hit_enter_on_dodaj_button(self.driver)
 
@@ -172,7 +166,6 @@ class tests(unittest.TestCase):
         self.assertTrue(
             nowy_uzytkownik.check_anuluj_button(self.driver)
         )
-        print('test' + str(random.randint(0, 10000000)))
         nowy_uzytkownik.input_text_to_nazwa_uzytkownika_xpath(self.driver, user_name)
         nowy_uzytkownik.input_text_to_email_xpath(self.driver, user_email)
         nowy_uzytkownik.input_text_to_imie_i_nazwisko_xpath(self.driver, user_name_last_name)
@@ -181,7 +174,7 @@ class tests(unittest.TestCase):
         nowy_uzytkownik.click_aktywny_tak_xpath(self.driver)
         nowy_uzytkownik.click_regulamin_zaakceptowany_tak_xpath(self.driver)
         nowy_uzytkownik.click_typ_uzytkownika_zewnetrzny(self.driver)
-        nowy_uzytkownik.hit_enter_on_anuluj_button(self.driver)
+        nowy_uzytkownik.hit_enter_on_dodaj_uzytkownik_button(self.driver)
 
 ############# Uzytkownicy ##########
         self.assertTrue(
@@ -191,10 +184,9 @@ class tests(unittest.TestCase):
             uzytkownicy.check_uzytkownik_tabela(self.driver)
         )
         num_uzytkownikow_po_dodaniu = uzytkownicy.count_uzytkownikow_w_tabeli(self.driver)
-        # # Porownanie
-        self.assertItemEqual(num_uzytkownikow, num_uzytkownikow_po_dodaniu)
+
         # # # Asercja
-        # self.assertGreater(num_uzytkownikow, num_uzytkownikow_po_dodaniu)
+        self.assertGreater(num_uzytkownikow, num_uzytkownikow_po_dodaniu)
 
 
     def test_R_Test_6(self):
@@ -243,7 +235,6 @@ class tests(unittest.TestCase):
             uzytkownicy.check_uzytkownik_dodaj_button(self.driver)
         )
         num_uzytkownikow = uzytkownicy.count_uzytkownikow_w_tabeli(self.driver)
-        print (num_uzytkownikow)
 
         uzytkownicy.hit_enter_on_dodaj_button(self.driver)
 
@@ -262,7 +253,6 @@ class tests(unittest.TestCase):
         self.assertTrue(
             nowy_uzytkownik.check_anuluj_button(self.driver)
         )
-        print('test' + str(random.randint(0, 10000000)))
         nowy_uzytkownik.input_text_to_nazwa_uzytkownika_xpath(self.driver, user_name)
         nowy_uzytkownik.input_text_to_email_xpath(self.driver, user_email)
         nowy_uzytkownik.input_text_to_imie_i_nazwisko_xpath(self.driver, user_name_last_name)
@@ -271,7 +261,7 @@ class tests(unittest.TestCase):
         nowy_uzytkownik.click_aktywny_nie_xpath(self.driver)
         nowy_uzytkownik.click_regulamin_zaakceptowany_tak_xpath(self.driver)
         nowy_uzytkownik.click_typ_uzytkownika_wspolpracownik(self.driver)
-        nowy_uzytkownik.hit_enter_on_anuluj_button(self.driver)
+        nowy_uzytkownik.hit_enter_on_dodaj_uzytkownik_button(self.driver)
 
 ############# Uzytkownicy ##########
         self.assertTrue(
@@ -281,10 +271,9 @@ class tests(unittest.TestCase):
             uzytkownicy.check_uzytkownik_tabela(self.driver)
         )
         num_uzytkownikow_po_dodaniu = uzytkownicy.count_uzytkownikow_w_tabeli(self.driver)
-        # # Porownanie
-        self.assertItemEqual(num_uzytkownikow, num_uzytkownikow_po_dodaniu)
+
         # # # Asercja
-        # self.assertGreater(num_uzytkownikow, num_uzytkownikow_po_dodaniu)
+        self.assertGreater(num_uzytkownikow, num_uzytkownikow_po_dodaniu)
 
 
     def test_R_Test_7(self):
@@ -333,7 +322,6 @@ class tests(unittest.TestCase):
             uzytkownicy.check_uzytkownik_dodaj_button(self.driver)
         )
         num_uzytkownikow = uzytkownicy.count_uzytkownikow_w_tabeli(self.driver)
-        print (num_uzytkownikow)
 
         uzytkownicy.hit_enter_on_dodaj_button(self.driver)
 
@@ -352,7 +340,6 @@ class tests(unittest.TestCase):
         self.assertTrue(
             nowy_uzytkownik.check_anuluj_button(self.driver)
         )
-        print('test' + str(random.randint(0, 10000000)))
         nowy_uzytkownik.input_text_to_nazwa_uzytkownika_xpath(self.driver, user_name)
         nowy_uzytkownik.input_text_to_email_xpath(self.driver, user_email)
         nowy_uzytkownik.input_text_to_imie_i_nazwisko_xpath(self.driver, user_name_last_name)
@@ -361,7 +348,7 @@ class tests(unittest.TestCase):
         nowy_uzytkownik.click_aktywny_tak_xpath(self.driver)
         nowy_uzytkownik.click_regulamin_zaakceptowany_nie_xpath(self.driver)
         nowy_uzytkownik.click_typ_uzytkownika_gosc(self.driver)
-        nowy_uzytkownik.hit_enter_on_anuluj_button(self.driver)
+        nowy_uzytkownik.hit_enter_on_dodaj_uzytkownik_button(self.driver)
 
 ############# Uzytkownicy ##########
         self.assertTrue(
@@ -371,13 +358,9 @@ class tests(unittest.TestCase):
             uzytkownicy.check_uzytkownik_tabela(self.driver)
         )
         num_uzytkownikow_po_dodaniu = uzytkownicy.count_uzytkownikow_w_tabeli(self.driver)
-        # # Porownanie
-        self.assertItemEqual(num_uzytkownikow, num_uzytkownikow_po_dodaniu)
+
         # # # Asercja
-        # self.assertGreater(num_uzytkownikow, num_uzytkownikow_po_dodaniu)
-
-
-
+        self.assertGreater(num_uzytkownikow, num_uzytkownikow_po_dodaniu)
 
 if __name__ == "__main__":
     unittest.main()

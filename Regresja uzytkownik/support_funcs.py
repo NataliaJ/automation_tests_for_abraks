@@ -48,5 +48,4 @@ def click_enter_on_element(driver_instance, xpath):
 
 def check_url_contains_correct_name_page(driver_instance, text):
     url_text = driver_instance.current_url
-    print(url_text)
     return url_text

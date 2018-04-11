@@ -47,7 +47,6 @@ def check_hitting_results_are_correct_role(driver_instance, text):
         xpath=__admin_role_button
     )
     elem_text = elem.text
-    print(elem_text)
     return elem_text == text
 
 def hit_enter_on_admin_role_button(driver_instance):
@@ -62,7 +61,6 @@ def check_admin_logo(driver_instance, text):
         xpath=__admin_logo
     )
     elem_text = elem.text
-    print(elem_text)
     return elem_text == text
 
 def check_admin_tabela(driver_instance):

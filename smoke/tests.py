@@ -263,6 +263,5 @@ class tests(unittest.TestCase):
             admin.check_url_contains_correct_name_page(self.driver, 'http://integracja.abraks.pl/login')
         )
 
-
 if __name__ == "__main__":
     unittest.main()

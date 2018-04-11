@@ -125,7 +125,6 @@ class tests(unittest.TestCase):
             uzytkownicy.check_uzytkownik_dodaj_button(self.driver)
         )
         num_uzytkownikow = uzytkownicy.count_uzytkownikow_w_tabeli(self.driver)
-        print (num_uzytkownikow)
 
         uzytkownicy.hit_enter_on_dodaj_button(self.driver)
 
@@ -198,7 +197,6 @@ class tests(unittest.TestCase):
             uzytkownicy.check_uzytkownik_dodaj_button(self.driver)
         )
         num_uzytkownikow = uzytkownicy.count_uzytkownikow_w_tabeli(self.driver)
-        print (num_uzytkownikow)
 
         uzytkownicy.hit_enter_on_dodaj_button(self.driver)
 
@@ -228,15 +226,11 @@ class tests(unittest.TestCase):
             uzytkownicy.check_uzytkownik_tabela(self.driver)
         )
         num_uzytkownikow_po_dodaniu = uzytkownicy.count_uzytkownikow_w_tabeli(self.driver)
-        print(num_uzytkownikow_po_dodaniu)
         # # Porownanie
         self.assertItemEqual(num_uzytkownikow, num_uzytkownikow_po_dodaniu)
 
     def assertItemEqual(self, num_uzytkownikow, num_uzytkownikow_po_dodaniu):
         pass
-
-        # # # Asercja
-        # self.assertGreater(num_uzytkownikow, num_uzytkownikow_po_dodaniu)
 
 if __name__ == "__main__":
     unittest.main()

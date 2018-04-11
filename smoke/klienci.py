@@ -30,7 +30,6 @@ def check_klienci_logo(driver_instance, text):
         xpath=__klienci_logo
     )
     elem_text = elem.text
-    print(elem_text)
     return elem_text == text
 
 def check_klienci_tabela(driver_instance):
