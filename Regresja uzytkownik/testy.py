@@ -10,7 +10,7 @@ class tests(unittest.TestCase):
         self.driver = webdriver.Chrome()
         self.driver.implicitly_wait(15)
         self.driver.maximize_window()
-        self.driver.get("http://integracja.abraks.pl/login")
+        self.driver.get("http://env20180415.abraks.pl/login")
 
     def tearDown(self):
         self.driver.quit()
@@ -29,7 +29,7 @@ class tests(unittest.TestCase):
         )
 
         self.assertTrue(
-            pulpit.check_url_contains_correct_name_page(self.driver, 'http://integracja.abraks.pl/')
+            pulpit.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/')
         )
 
         self.assertTrue(
@@ -37,7 +37,7 @@ class tests(unittest.TestCase):
         )
 
         self.assertTrue(
-            pulpit.check_url_contains_correct_name_page(self.driver, 'http://integracja.abraks.pl/')
+            pulpit.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/')
         )
 
         pulpit.hit_enter_on_admin_button(self.driver)
@@ -49,7 +49,7 @@ class tests(unittest.TestCase):
 
 ############# Uzytkownicy ##########
         self.assertTrue(
-            uzytkownicy.check_url_contains_correct_name_page(self.driver, 'http://integracja.abraks.pl/admin/user')
+            uzytkownicy.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/admin/user')
         )
         self.assertTrue(
             uzytkownicy.check_uzytkownik_logo(self.driver, u'Użytkownik > Indeks')
@@ -93,7 +93,7 @@ class tests(unittest.TestCase):
         )
 
         self.assertTrue(
-            pulpit.check_url_contains_correct_name_page(self.driver, 'http://integracja.abraks.pl/')
+            pulpit.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/')
         )
 
         self.assertTrue(
@@ -101,7 +101,7 @@ class tests(unittest.TestCase):
         )
 
         self.assertTrue(
-            pulpit.check_url_contains_correct_name_page(self.driver, 'http://integracja.abraks.pl/')
+            pulpit.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/')
         )
 
         pulpit.hit_enter_on_admin_button(self.driver)
@@ -113,7 +113,7 @@ class tests(unittest.TestCase):
 
 ############# Uzytkownicy ##########
         self.assertTrue(
-            uzytkownicy.check_url_contains_correct_name_page(self.driver, 'http://integracja.abraks.pl/admin/user')
+            uzytkownicy.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/admin/user')
         )
         self.assertTrue(
             uzytkownicy.check_uzytkownik_logo(self.driver, u'Użytkownik > Indeks')
@@ -139,7 +139,7 @@ class tests(unittest.TestCase):
 
 ############# Uzytkownicy ##########
         self.assertTrue(
-            uzytkownicy.check_url_contains_correct_name_page(self.driver, 'http://integracja.abraks.pl/admin/user')
+            uzytkownicy.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/admin/user')
         )
         self.assertTrue(
             uzytkownicy.check_uzytkownik_tabela(self.driver)
@@ -165,7 +165,7 @@ class tests(unittest.TestCase):
         )
 
         self.assertTrue(
-            pulpit.check_url_contains_correct_name_page(self.driver, 'http://integracja.abraks.pl/')
+            pulpit.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/')
         )
 
         self.assertTrue(
@@ -173,7 +173,7 @@ class tests(unittest.TestCase):
         )
 
         self.assertTrue(
-            pulpit.check_url_contains_correct_name_page(self.driver, 'http://integracja.abraks.pl/')
+            pulpit.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/')
         )
 
         pulpit.hit_enter_on_admin_button(self.driver)
@@ -185,7 +185,7 @@ class tests(unittest.TestCase):
 
 ############# Uzytkownicy ##########
         self.assertTrue(
-            uzytkownicy.check_url_contains_correct_name_page(self.driver, 'http://integracja.abraks.pl/admin/user')
+            uzytkownicy.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/admin/user')
         )
         self.assertTrue(
             uzytkownicy.check_uzytkownik_logo(self.driver, u'Użytkownik > Indeks')
@@ -220,7 +220,7 @@ class tests(unittest.TestCase):
 
 ############# Uzytkownicy ##########
         self.assertTrue(
-            uzytkownicy.check_url_contains_correct_name_page(self.driver, 'http://integracja.abraks.pl/admin/user')
+            uzytkownicy.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/admin/user')
         )
         self.assertTrue(
             uzytkownicy.check_uzytkownik_tabela(self.driver)
