@@ -22,189 +22,189 @@ class tests(unittest.TestCase):
 
     def test_R_Test_1(self):
         self.assertTrue(
-            pulpit.check_loging_results_are_correct(self.driver, 'Pulpit > Indeks')
+            pulpit.sprawdz_poprawnosc_logowania(self.driver, 'Pulpit > Indeks')
         )
 
         self.assertTrue(
-            pulpit.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/')
+            pulpit.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver, 'http://env20180415.abraks.pl/')
         )
 
         self.assertTrue(
-            pulpit.check_loging_results_are_correct_admin(self.driver, 'Admin')
+            pulpit.sprawdz_poprawnosc_logowania_admin(self.driver, 'Admin')
         )
 
         self.assertTrue(
-            pulpit.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/')
+            pulpit.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver, 'http://env20180415.abraks.pl/')
         )
 
-        pulpit.hit_enter_on_admin_button(self.driver)
+        pulpit.nacisnij_enter_na_admin_przycisk(self.driver)
 
         self.assertTrue(
-            pulpit.check_hitting_results_are_correct_uzytkownicy(self.driver, u'Użytkownicy')
+            pulpit.sprawdz_poprawnosc_nacisniecia_uzytkownicy(self.driver, u'Użytkownicy')
         )
-        pulpit.hit_enter_on_uzytkownicy_button(self.driver)
+        pulpit.nacisnij_enter_na_uzytkownicy_przycisk(self.driver)
 
         ############# Uzytkownicy ##########
         self.assertTrue(
-            uzytkownicy.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/admin/user')
+            uzytkownicy.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver, 'http://env20180415.abraks.pl/admin/user')
         )
         self.assertTrue(
-            uzytkownicy.check_uzytkownik_logo(self.driver, u'Użytkownik > Indeks')
+            uzytkownicy.sprawdz_uzytkownik_logo(self.driver, u'Użytkownik > Indeks')
         )
         self.assertTrue(
-            uzytkownicy.check_uzytkownik_tabela(self.driver)
+            uzytkownicy.sprawdz_uzytkownik_tabela(self.driver)
         )
         self.assertTrue(
-            uzytkownicy.check_uzytkownik_szukaj(self.driver)
+            uzytkownicy.sprawdz_uzytkownik_szukaj(self.driver)
         )
         self.assertTrue(
-            uzytkownicy.check_uzytkownik_per_page(self.driver)
+            uzytkownicy.sprawdz_uzytkownik_per_strona(self.driver)
         )
         self.assertTrue(
-            uzytkownicy.check_uzytkownik_dodaj_button(self.driver)
+            uzytkownicy.sprawdz_uzytkownik_dodaj_przycisk(self.driver)
         )
         self.assertTrue(
-            uzytkownicy.check_uzytkownik_jezyk_filtr(self.driver)
+            uzytkownicy.sprawdz_uzytkownik_jezyk_filtr(self.driver)
         )
         self.assertTrue(
-            uzytkownicy.check_uzytkownik_aktywny_filtr(self.driver)
+            uzytkownicy.sprawdz_uzytkownik_aktywny_filtr(self.driver)
         )
         self.assertTrue(
-            uzytkownicy.check_uzytkownik_regulamin_zaakceptowany_filtr(self.driver)
+            uzytkownicy.sprawdz_uzytkownik_regulamin_zaakceptowany_filtr(self.driver)
         )
         self.assertTrue(
-            uzytkownicy.check_uzytkownik_typ_uzytkownika_filtr(self.driver)
+            uzytkownicy.sprawdz_uzytkownik_typ_uzytkownika_filtr(self.driver)
         )
 
     def test_R_Test_2(self):
 
         self.assertTrue(
-            pulpit.check_loging_results_are_correct(self.driver, 'Pulpit > Indeks')
+            pulpit.sprawdz_poprawnosc_logowania(self.driver, 'Pulpit > Indeks')
         )
 
         self.assertTrue(
-            pulpit.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/')
+            pulpit.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver, 'http://env20180415.abraks.pl/')
         )
 
         self.assertTrue(
-            pulpit.check_loging_results_are_correct_admin(self.driver, 'Admin')
+            pulpit.sprawdz_poprawnosc_logowania_admin(self.driver, 'Admin')
         )
 
         self.assertTrue(
-            pulpit.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/')
+            pulpit.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver, 'http://env20180415.abraks.pl/')
         )
 
-        pulpit.hit_enter_on_admin_button(self.driver)
+        pulpit.nacisnij_enter_na_admin_przycisk(self.driver)
 
         self.assertTrue(
-            pulpit.check_hitting_results_are_correct_uzytkownicy(self.driver, u'Użytkownicy')
+            pulpit.sprawdz_poprawnosc_nacisniecia_uzytkownicy(self.driver, u'Użytkownicy')
         )
-        pulpit.hit_enter_on_uzytkownicy_button(self.driver)
+        pulpit.nacisnij_enter_na_uzytkownicy_przycisk(self.driver)
 
         ############# Uzytkownicy ##########
         self.assertTrue(
-            uzytkownicy.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/admin/user')
+            uzytkownicy.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver, 'http://env20180415.abraks.pl/admin/user')
         )
         self.assertTrue(
-            uzytkownicy.check_uzytkownik_logo(self.driver, u'Użytkownik > Indeks')
+            uzytkownicy.sprawdz_uzytkownik_logo(self.driver, u'Użytkownik > Indeks')
         )
         self.assertTrue(
-            uzytkownicy.check_uzytkownik_tabela(self.driver)
+            uzytkownicy.sprawdz_uzytkownik_tabela(self.driver)
         )
         self.assertTrue(
-            uzytkownicy.check_uzytkownik_dodaj_button(self.driver)
+            uzytkownicy.sprawdz_uzytkownik_dodaj_przycisk(self.driver)
         )
-        num_uzytkownikow = uzytkownicy.count_uzytkownikow_w_tabeli(self.driver)
+        num_uzytkownikow = uzytkownicy.policz_uzytkownikow_w_tabeli(self.driver)
 
-        uzytkownicy.hit_enter_on_dodaj_button(self.driver)
+        uzytkownicy.nacisnij_enter_na_dodaj_przycisk(self.driver)
 
         ############# Nowy Uzytkownik ######################
         self.assertTrue(
-            nowy_uzytkownik.check_logo_utworz_uzytkownik(self.driver, u'Użytkownik > Utwórz')
+            nowy_uzytkownik.sprawdz_logo_utworz_uzytkownik(self.driver, u'Użytkownik > Utwórz')
         )
         self.assertTrue(
-            nowy_uzytkownik.check_anuluj_button(self.driver)
+            nowy_uzytkownik.sprawdz_anuluj_przycisk(self.driver)
         )
-        nowy_uzytkownik.hit_enter_on_anuluj_button(self.driver)
+        nowy_uzytkownik.nacisnij_enter_na_anuluj_przycisk(self.driver)
 
         ############# Uzytkownicy ##########
         self.assertTrue(
-            uzytkownicy.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/admin/user')
+            uzytkownicy.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver, 'http://env20180415.abraks.pl/admin/user')
         )
         self.assertTrue(
-            uzytkownicy.check_uzytkownik_tabela(self.driver)
+            uzytkownicy.sprawdz_uzytkownik_tabela(self.driver)
         )
-        num_uzytkownikow_po_dodaniu = uzytkownicy.count_uzytkownikow_w_tabeli(self.driver)
+        num_uzytkownikow_po_dodaniu = uzytkownicy.policz_uzytkownikow_w_tabeli(self.driver)
         # # Porownanie
         self.assertItemEqual(num_uzytkownikow, num_uzytkownikow_po_dodaniu)
 
     def test_R_Test_3(self):
         self.assertTrue(
-            pulpit.check_loging_results_are_correct(self.driver, 'Pulpit > Indeks')
+            pulpit.sprawdz_poprawnosc_logowania(self.driver, 'Pulpit > Indeks')
         )
 
         self.assertTrue(
-            pulpit.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/')
+            pulpit.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver, 'http://env20180415.abraks.pl/')
         )
 
         self.assertTrue(
-            pulpit.check_loging_results_are_correct_admin(self.driver, 'Admin')
+            pulpit.sprawdz_poprawnosc_logowania_admin(self.driver, 'Admin')
         )
 
         self.assertTrue(
-            pulpit.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/')
+            pulpit.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver, 'http://env20180415.abraks.pl/')
         )
 
-        pulpit.hit_enter_on_admin_button(self.driver)
+        pulpit.nacisnij_enter_na_admin_przycisk(self.driver)
 
         self.assertTrue(
-            pulpit.check_hitting_results_are_correct_uzytkownicy(self.driver, u'Użytkownicy')
+            pulpit.sprawdz_poprawnosc_nacisniecia_uzytkownicy(self.driver, u'Użytkownicy')
         )
-        pulpit.hit_enter_on_uzytkownicy_button(self.driver)
+        pulpit.nacisnij_enter_na_uzytkownicy_przycisk(self.driver)
 
         ############# Uzytkownicy ##########
         self.assertTrue(
-            uzytkownicy.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/admin/user')
+            uzytkownicy.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver, 'http://env20180415.abraks.pl/admin/user')
         )
         self.assertTrue(
-            uzytkownicy.check_uzytkownik_logo(self.driver, u'Użytkownik > Indeks')
+            uzytkownicy.sprawdz_uzytkownik_logo(self.driver, u'Użytkownik > Indeks')
         )
         self.assertTrue(
-            uzytkownicy.check_uzytkownik_tabela(self.driver)
+            uzytkownicy.sprawdz_uzytkownik_tabela(self.driver)
         )
         self.assertTrue(
-            uzytkownicy.check_uzytkownik_dodaj_button(self.driver)
+            uzytkownicy.sprawdz_uzytkownik_dodaj_przycisk(self.driver)
         )
-        num_uzytkownikow = uzytkownicy.count_uzytkownikow_w_tabeli(self.driver)
+        num_uzytkownikow = uzytkownicy.policz_uzytkownikow_w_tabeli(self.driver)
 
-        uzytkownicy.hit_enter_on_dodaj_button(self.driver)
+        uzytkownicy.nacisnij_enter_na_dodaj_przycisk(self.driver)
 
         ############# Nowy Uzytkownik ######################
         self.assertTrue(
-            nowy_uzytkownik.check_logo_utworz_uzytkownik(self.driver, u'Użytkownik > Utwórz')
+            nowy_uzytkownik.sprawdz_logo_utworz_uzytkownik(self.driver, u'Użytkownik > Utwórz')
         )
         self.assertTrue(
-            nowy_uzytkownik.check_dodaj_uzytkownik_button(self.driver)
+            nowy_uzytkownik.sprawdz_dodaj_uzytkownik_przycisk(self.driver)
         )
         self.assertTrue(
-            nowy_uzytkownik.check_anuluj_button(self.driver)
+            nowy_uzytkownik.sprawdz_anuluj_przycisk(self.driver)
         )
-        nowy_uzytkownik.hit_enter_on_dodaj_uzytkownik_button(self.driver)
+        nowy_uzytkownik.nacisnij_enter_na_dodaj_uzytkownik_przycisk(self.driver)
 
         self.assertTrue(
-            nowy_uzytkownik.check_to_pole_jest_wymagane(self.driver)
+            nowy_uzytkownik.sprawdz_to_pole_jest_wymagane(self.driver)
         )
 
-        nowy_uzytkownik.hit_enter_on_anuluj_button(self.driver)
+        nowy_uzytkownik.nacisnij_enter_na_anuluj_przycisk(self.driver)
 
         ############# Uzytkownicy ##########
         self.assertTrue(
-            uzytkownicy.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/admin/user')
+            uzytkownicy.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver, 'http://env20180415.abraks.pl/admin/user')
         )
         self.assertTrue(
-            uzytkownicy.check_uzytkownik_tabela(self.driver)
+            uzytkownicy.sprawdz_uzytkownik_tabela(self.driver)
         )
-        num_uzytkownikow_po_dodaniu = uzytkownicy.count_uzytkownikow_w_tabeli(self.driver)
+        num_uzytkownikow_po_dodaniu = uzytkownicy.policz_uzytkownikow_w_tabeli(self.driver)
         # # Porownanie
         self.assertItemEqual(num_uzytkownikow, num_uzytkownikow_po_dodaniu)
 

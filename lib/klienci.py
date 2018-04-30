@@ -10,22 +10,22 @@ __klienci_logo = "//*[@id='content']/div/div/h1"
 # Tabela - taki sam xpath na kazdej stronie
 __klienic_tabela = "//*[@id='widget-grid']/div[2]/article/div[1]/table"
 
-# Oddzialy button
-__klienci_oddzialy_button = "//*[@id='left-panel']/nav/ul/li[2]/ul/li[2]/a"
+# Oddzialy przycisk
+__klienci_oddzialy_przycisk = "//*[@id='left-panel']/nav/ul/li[2]/ul/li[2]/a"
 
-# Osoby kontaktowe button
-__klienci_osoby_kontaktowe_button = "//*[@id='left-panel']/nav/ul/li[2]/ul/li[3]/a"
+# Osoby kontaktowe przycisk
+__klienci_osoby_kontaktowe_przycisk = "//*[@id='left-panel']/nav/ul/li[2]/ul/li[3]/a"
 
-# Ostrzeżenia button
-__klienci_ostrzezenia_button = "//*[@id='left-panel']/nav/ul/li[2]/ul/li[4]/a"
+# Ostrzeżenia przycisk
+__klienci_ostrzezenia_przycisk = "//*[@id='left-panel']/nav/ul/li[2]/ul/li[4]/a"
 
-# Sekretariat button in menu
-__pulpit_sekretariat_button_xpath = "//*[@id='left-panel']/nav/ul/li[3]/a/span"
+# Sekretariat przycisk w menu
+__pulpit_sekretariat_przycisk_xpath = "//*[@id='left-panel']/nav/ul/li[3]/a/span"
 __pulpit_sekretariat_xpath = "//*[@id='left-panel']/nav/ul/li[3]/a"
 
 
-def check_klienci_logo(driver_instance, text):
-    elem = wait_for_visibility_of_element(
+def sprawdz_klienci_logo(driver_instance, text):
+    elem = poczekaj_na_widocznosc_elementu(
         driver_instance=driver_instance,
         xpath=__klienci_logo
     )
@@ -33,30 +33,30 @@ def check_klienci_logo(driver_instance, text):
     return elem_text == text
 
 
-def check_klienci_tabela(driver_instance):
-    elem = wait_for_visibility_of_element(
+def sprawdz_klienci_tabela(driver_instance):
+    elem = poczekaj_na_widocznosc_elementu(
         driver_instance=driver_instance,
         xpath=__klienic_tabela
     )
     return elem
 
 
-def hit_enter_on_oddzialy_button(driver_instance):
-    click_enter_on_element(
+def nacisnij_enter_na_oddzialy_przycisk(driver_instance):
+    nacisnij_enter_na_elemencie(
         driver_instance=driver_instance,
-        xpath=__klienci_oddzialy_button
+        xpath=__klienci_oddzialy_przycisk
     )
 
 
-def hit_enter_on_osoby_kontaktowe_button(driver_instance):
-    click_enter_on_element(
+def nacisnij_enter_na_osoby_kontaktowe_przycisk(driver_instance):
+    nacisnij_enter_na_elemencie(
         driver_instance=driver_instance,
-        xpath=__klienci_osoby_kontaktowe_button
+        xpath=__klienci_osoby_kontaktowe_przycisk
     )
 
 
-def hit_enter_on_ostrzezenia_button(driver_instance):
-    click_enter_on_element(
+def nacisnij_enter_na_ostrzezenia_przycisk(driver_instance):
+    nacisnij_enter_na_elemencie(
         driver_instance=driver_instance,
-        xpath=__klienci_ostrzezenia_button
+        xpath=__klienci_ostrzezenia_przycisk
     )

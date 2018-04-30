@@ -4,66 +4,66 @@ from lib.funkcje_pomocnicze import *
 
 # Xpaths
 
-# Top logo bar
-__top_logo_bar_xpath = "//*[@id='logo']/img"
+# Gorne logo pasek
+__gorne_logo_pasek_xpath = "//*[@id='logo']/img"
 
-# Login section
-__login_section_xpath = "//*[@id='login-form']"
+# Sekcja Logowania
+__sekcja_logowania_xpath = "//*[@id='login-form']"
 
-# Email field
-__email_field_xpath = "//*[@id='email']"
+# Email pole
+__pole_email_xpath = "//*[@id='email']"
 
-# Password field
-__password_field_xpath = "//*[@id='password']"
+# Haslo pole
+__pole_haslo_xpath = "//*[@id='password']"
 
-# Logging button
-__login_button_xpath = "//*[@id='login-form']/footer/button"
+# Przycisk logowania
+__przycisk_logowania_xpath = "//*[@id='login-form']/footer/button"
 
 
 def login(test, driver_instance):
     input_text = "tester@abraks.pl"
     input_text2 = "Rety$675"
 
-    test.assertTrue(check_top_logo_bar_is_visible(driver_instance))
-    input_email_to_email_field(driver_instance, input_text)
-    input_password_to_password_field(driver_instance, input_text2)
-    hit_enter_on_logging_button(driver_instance)
+    test.assertTrue(sprawdz_czy_gorne_logo_pasek_jest_widoczne(driver_instance))
+    wprowadz_email_do_pole_email(driver_instance, input_text)
+    wprowadz_haslo_do_pole_haslo(driver_instance, input_text2)
+    nacisnij_enter_naprzycisk_logowania(driver_instance)
 
 
-def check_top_logo_bar_is_visible(driver_instance):
-    elem = wait_for_visibility_of_element(
+def sprawdz_czy_gorne_logo_pasek_jest_widoczne(driver_instance):
+    elem = poczekaj_na_widocznosc_elementu(
         driver_instance=driver_instance,
-        xpath=__top_logo_bar_xpath
+        xpath=__gorne_logo_pasek_xpath
     )
     return elem.is_displayed()
 
 
-def check_loging_section_is_visible(driver_instance):
-    elem = wait_for_visibility_of_element(
+def sprawdz_czy_sekcja_logowania_jest_widoczna(driver_instance):
+    elem = poczekaj_na_widocznosc_elementu(
         driver_instance=driver_instance,
-        xpath=__login_section_xpath
+        xpath=__sekcja_logowania_xpath
     )
     return elem.is_displayed()
 
 
-def input_email_to_email_field(driver_instance, text):
-    send_keys_to_element(
+def wprowadz_email_do_pole_email(driver_instance, text):
+    wyslij_klucz_do_elementu(
         driver_instance=driver_instance,
-        xpath=__email_field_xpath,
+        xpath=__pole_email_xpath,
         text=text
     )
 
 
-def input_password_to_password_field(driver_instance, text):
-    send_keys_to_element(
+def wprowadz_haslo_do_pole_haslo(driver_instance, text):
+    wyslij_klucz_do_elementu(
         driver_instance=driver_instance,
-        xpath=__password_field_xpath,
+        xpath=__pole_haslo_xpath,
         text=text
     )
 
 
-def hit_enter_on_logging_button(driver_instance):
-    click_enter_on_element(
+def nacisnij_enter_naprzycisk_logowania(driver_instance):
+    nacisnij_enter_na_elemencie(
         driver_instance=driver_instance,
-        xpath=__login_button_xpath
+        xpath=__przycisk_logowania_xpath
     )

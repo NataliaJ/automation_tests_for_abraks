@@ -13,53 +13,53 @@ __admin_tabela = "//*[@id='widget-grid']/div[2]/article/div[1]/table"
 # Tabela ustawienia
 __admin_ustawienia_tabela = "//*[@id='wid-id-application_settings']/header"
 
-# Admin button
-__admin_button = "//*[@id='left-panel']/nav/ul/li[4]/a"
+# Admin przycisk
+__admin_przycisk = "//*[@id='left-panel']/nav/ul/li[4]/a"
 
-# Role button
-__admin_role_button = "//*[@id='left-panel']/nav/ul/li[4]/ul/li[1]/a"
+# Role przycisk
+__admin_role_przycisk = "//*[@id='left-panel']/nav/ul/li[4]/ul/li[1]/a"
 
-# Uprawnienia button
-__admin_uprawnienia_button = "//*[@id='left-panel']/nav/ul/li[4]/ul/li[2]/a"
+# Uprawnienia przycisk
+__admin_uprawnienia_przycisk = "//*[@id='left-panel']/nav/ul/li[4]/ul/li[2]/a"
 
-# Uzytkownicy button
-__admin_uzytkownicy_button = "//*[@id='left-panel']/nav/ul/li[4]/ul/li[3]/a"
+# Uzytkownicy przycisk
+__admin_uzytkownicy_przycisk = "//*[@id='left-panel']/nav/ul/li[4]/ul/li[3]/a"
 
-# Strony button
-__admin_strony_button = "//*[@id='left-panel']/nav/ul/li[4]/ul/li[4]/a"
+# Strony przycisk
+__admin_strony_przycisk = "//*[@id='left-panel']/nav/ul/li[4]/ul/li[4]/a"
 
-# Ustawienia button
-__admin_ustawienia_button = "//*[@id='left-panel']/nav/ul/li[4]/ul/li[5]/a"
+# Ustawienia przycisk
+__admin_ustawienia_przycisk = "//*[@id='left-panel']/nav/ul/li[4]/ul/li[5]/a"
 
-# Log out button
-__log_out_button = "//*[@id='logout']/span/a"
+# Wyloguj przycisk
+__wyloguj_przycisk = "//*[@id='logout']/span/a"
 
 
-def hit_enter_on_admin_button(driver_instance):
-    click_enter_on_element(
+def nacisnij_enter_na_admin_przycisk(driver_instance):
+    nacisnij_enter_na_elemencie(
         driver_instance=driver_instance,
-        xpath=__admin_button
+        xpath=__admin_przycisk
     )
 
 
-def check_hitting_results_are_correct_role(driver_instance, text):
-    elem = wait_for_visibility_of_element(
+def sprawdz_rezultat_nacisniecia_role(driver_instance, text):
+    elem = poczekaj_na_widocznosc_elementu(
         driver_instance=driver_instance,
-        xpath=__admin_role_button
+        xpath=__admin_role_przycisk
     )
     elem_text = elem.text
     return elem_text == text
 
 
-def hit_enter_on_admin_role_button(driver_instance):
-    click_enter_on_element(
+def nacisnij_enter_na_role_przycisk(driver_instance):
+    nacisnij_enter_na_elemencie(
         driver_instance=driver_instance,
-        xpath=__admin_role_button
+        xpath=__admin_role_przycisk
     )
 
 
-def check_admin_logo(driver_instance, text):
-    elem = wait_for_visibility_of_element(
+def sprawdz_admin_logo(driver_instance, text):
+    elem = poczekaj_na_widocznosc_elementu(
         driver_instance=driver_instance,
         xpath=__admin_logo
     )
@@ -67,52 +67,52 @@ def check_admin_logo(driver_instance, text):
     return elem_text == text
 
 
-def check_admin_tabela(driver_instance):
-    elem = wait_for_visibility_of_element(
+def sprawdz_admin_tabela(driver_instance):
+    elem = poczekaj_na_widocznosc_elementu(
         driver_instance=driver_instance,
         xpath=__admin_tabela
     )
     return elem
 
 
-def hit_enter_on_admin_uprawnienia_button(driver_instance):
-    click_enter_on_element(
+def nacisnij_enter_na_admin_uprawnienia_przycisk(driver_instance):
+    nacisnij_enter_na_elemencie(
         driver_instance=driver_instance,
-        xpath=__admin_uprawnienia_button
+        xpath=__admin_uprawnienia_przycisk
     )
 
 
-def hit_enter_on_admin_uzytkownicy_button(driver_instance):
-    click_enter_on_element(
+def nacisnij_enter_na_admin_uzytkownicy_przycisk(driver_instance):
+    nacisnij_enter_na_elemencie(
         driver_instance=driver_instance,
-        xpath=__admin_uzytkownicy_button
+        xpath=__admin_uzytkownicy_przycisk
     )
 
 
-def hit_enter_on_admin_strony_button(driver_instance):
-    click_enter_on_element(
+def nacisnij_enter_na_admin_strony_przycisk(driver_instance):
+    nacisnij_enter_na_elemencie(
         driver_instance=driver_instance,
-        xpath=__admin_strony_button
+        xpath=__admin_strony_przycisk
     )
 
 
-def hit_enter_on_admin_ustawienia_button(driver_instance):
-    click_enter_on_element(
+def nacisnij_enter_na_admin_ustawienia_przycisk(driver_instance):
+    nacisnij_enter_na_elemencie(
         driver_instance=driver_instance,
-        xpath=__admin_ustawienia_button
+        xpath=__admin_ustawienia_przycisk
     )
 
 
-def check_admin_ustawienia_tabela(driver_instance):
-    elem = wait_for_visibility_of_element(
+def sprawdz_admin_ustawienia_tabela(driver_instance):
+    elem = poczekaj_na_widocznosc_elementu(
         driver_instance=driver_instance,
         xpath=__admin_ustawienia_tabela
     )
     return elem
 
 
-def hit_enter_on_log_out_button(driver_instance):
-    click_enter_on_element(
+def nacisnij_enter_na_wyloguj_przycisk(driver_instance):
+    nacisnij_enter_na_elemencie(
         driver_instance=driver_instance,
-        xpath=__log_out_button
+        xpath=__wyloguj_przycisk
     )

@@ -4,29 +4,29 @@ from lib.funkcje_pomocnicze import *
 
 # Xpaths
 
-# Logging result, Pulpit is visible
+# Logo pulpitu
 __pulpit_logo_xpath = "//*[@id='content']/div/div/h1"
 
-# Admin button in menu
-__pulpit_admin_button_xpath = "//*[@id='left-panel']/nav/ul/li[4]/a/span"
+# Admin przycisk
+__pulpit_admin_przycisk_xpath = "//*[@id='left-panel']/nav/ul/li[4]/a/span"
 __pulpit_admin_xpath = "//*[@id='left-panel']/nav/ul/li[4]/a"
 
-# Uzytkownicy button in menu
-__pulpit_uzytkownicy_button_xpath = "//*[@id='left-panel']/nav/ul/li[4]/ul/li[3]/a"
+# Uzytkownicy przycisk
+__pulpit_uzytkownicy_przycisk_xpath = "//*[@id='left-panel']/nav/ul/li[4]/ul/li[3]/a"
 
-# Klienci button in menu
-__pulpit_klienci_button_xpath = "//*[@id='left-panel']/nav/ul/li[2]/a/span"
+# Klienci przycisk
+__pulpit_klienci_przycisk_xpath = "//*[@id='left-panel']/nav/ul/li[2]/a/span"
 __pulpit_klienci_xpath = "//*[@id='left-panel']/nav/ul/li[2]/a"
 
-# Kontrahenci button in menu
-__pulpit_kontrahenci_button_xpath = "//*[@id='left-panel']/nav/ul/li[2]/ul/li[1]/a"
+# Kontrahenci przycisk
+__pulpit_kontrahenci_przycisk_xpath = "//*[@id='left-panel']/nav/ul/li[2]/ul/li[1]/a"
 
-# Widgety na pulpicie
-__pulpit_widget_xpath = "//*[@id='widget-grid']/div[2]/article"
+# Widzety na pulpicie
+__pulpit_widzet_xpath = "//*[@id='widget-grid']/div[2]/article"
 
 
-def check_loging_results_are_correct(driver_instance, text):
-    elem = wait_for_visibility_of_element_after_login(
+def sprawdz_poprawnosc_logowania(driver_instance, text):
+    elem = poczekaj_na_widocznosc_elementu_po_logowaniu(
         driver_instance=driver_instance,
         xpath=__pulpit_logo_xpath
     )
@@ -34,64 +34,64 @@ def check_loging_results_are_correct(driver_instance, text):
     return elem_text == text
 
 
-def check_loging_results_are_correct_admin(driver_instance, text):
-    elem = wait_for_visibility_of_element_after_login(
+def sprawdz_poprawnosc_logowania_admin(driver_instance, text):
+    elem = poczekaj_na_widocznosc_elementu_po_logowaniu(
         driver_instance=driver_instance,
-        xpath=__pulpit_admin_button_xpath
+        xpath=__pulpit_admin_przycisk_xpath
     )
     elem_text = elem.text
     return elem_text == text
 
 
-def hit_enter_on_admin_button(driver_instance):
-    click_enter_on_element(
+def nacisnij_enter_na_admin_przycisk(driver_instance):
+    nacisnij_enter_na_elemencie(
         driver_instance=driver_instance,
         xpath=__pulpit_admin_xpath
     )
 
 
-def check_hitting_results_are_correct_uzytkownicy(driver_instance, text):
-    elem = wait_for_visibility_of_element(
+def sprawdz_poprawnosc_nacisniecia_uzytkownicy(driver_instance, text):
+    elem = poczekaj_na_widocznosc_elementu(
         driver_instance=driver_instance,
-        xpath=__pulpit_uzytkownicy_button_xpath
+        xpath=__pulpit_uzytkownicy_przycisk_xpath
     )
     elem_text = elem.text
     return elem_text == text
 
 
-def hit_enter_on_uzytkownicy_button(driver_instance):
-    click_enter_on_element(
+def nacisnij_enter_na_uzytkownicy_przycisk(driver_instance):
+    nacisnij_enter_na_elemencie(
         driver_instance=driver_instance,
-        xpath=__pulpit_uzytkownicy_button_xpath
+        xpath=__pulpit_uzytkownicy_przycisk_xpath
     )
 
-def check_loging_results_are_correct_klinci(driver_instance, text):
-    elem = wait_for_visibility_of_element_after_login(
+def sprawdz_poprawnosc_logowania_klienci(driver_instance, text):
+    elem = poczekaj_na_widocznosc_elementu_po_logowaniu(
         driver_instance=driver_instance,
-        xpath=__pulpit_klienci_button_xpath
+        xpath=__pulpit_klienci_przycisk_xpath
     )
     elem_text = elem.text
     return elem_text == text
 
 
-def hit_enter_on_klienci_button(driver_instance):
-    click_enter_on_element(
+def nacisnij_enter_na_klienci_przycisk(driver_instance):
+    nacisnij_enter_na_elemencie(
         driver_instance=driver_instance,
         xpath=__pulpit_klienci_xpath
     )
 
 
-def check_hitting_results_are_correct_kontrahenci(driver_instance, text):
-    elem = wait_for_visibility_of_element(
+def sprawdz_poprawnosc_nacisniecia_kontrahenci(driver_instance, text):
+    elem = poczekaj_na_widocznosc_elementu(
         driver_instance=driver_instance,
-        xpath=__pulpit_kontrahenci_button_xpath
+        xpath=__pulpit_kontrahenci_przycisk_xpath
     )
     elem_text = elem.text
     return elem_text == text
 
 
-def hit_enter_on_kontrahenci_button(driver_instance):
-    click_enter_on_element(
+def nacisnij_enter_na_kontrahenci_przycisk(driver_instance):
+    nacisnij_enter_na_elemencie(
         driver_instance=driver_instance,
-        xpath=__pulpit_kontrahenci_button_xpath
+        xpath=__pulpit_kontrahenci_przycisk_xpath
     )

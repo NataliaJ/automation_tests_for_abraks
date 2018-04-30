@@ -24,252 +24,252 @@ class tests(unittest.TestCase):
 
     def test_loging_correct_results(self):
         self.assertTrue(
-            pulpit.check_loging_results_are_correct(self.driver, 'Pulpit > Indeks')
+            pulpit.sprawdz_poprawnosc_logowania(self.driver, 'Pulpit > Indeks')
         )
         self.assertTrue(
-            pulpit.check_loging_results_are_correct_klinci(self.driver, 'Klienci')
+            pulpit.sprawdz_poprawnosc_logowania_klienci(self.driver, 'Klienci')
         )
 
         self.assertTrue(
-            pulpit.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/')
+            pulpit.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver, 'http://env20180415.abraks.pl/')
         )
 
-        pulpit.hit_enter_on_klienci_button(self.driver)
+        pulpit.nacisnij_enter_na_klienci_przycisk(self.driver)
 
         self.assertTrue(
-            pulpit.check_hitting_results_are_correct_kontrahenci(self.driver, 'Kontrahenci')
+            pulpit.sprawdz_poprawnosc_nacisniecia_kontrahenci(self.driver, 'Kontrahenci')
         )
-        pulpit.hit_enter_on_kontrahenci_button(self.driver)
+        pulpit.nacisnij_enter_na_kontrahenci_przycisk(self.driver)
 
         ##################### Klienci #############
         ############# Kontrahenci #############
         self.assertTrue(
-            klienci.check_url_contains_correct_name_page(self.driver,
+            klienci.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver,
                                                          'http://env20180415.abraks.pl/customer/contractor')
         )
         self.assertTrue(
-            klienci.check_klienci_logo(self.driver, 'Kontrahent > Indeks')
+            klienci.sprawdz_klienci_logo(self.driver, 'Kontrahent > Indeks')
         )
         self.assertTrue(
-            klienci.check_klienci_tabela(self.driver)
+            klienci.sprawdz_klienci_tabela(self.driver)
         )
-        klienci.hit_enter_on_oddzialy_button(self.driver)
+        klienci.nacisnij_enter_na_oddzialy_przycisk(self.driver)
         ############## Oddzialy ###############
         self.assertTrue(
-            klienci.check_url_contains_correct_name_page(self.driver,
+            klienci.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver,
                                                          'http://env20180415.abraks.pl/customer/department')
         )
         self.assertTrue(
-            klienci.check_klienci_logo(self.driver, u'Oddział > Indeks')
+            klienci.sprawdz_klienci_logo(self.driver, u'Oddział > Indeks')
         )
         self.assertTrue(
-            klienci.check_klienci_tabela(self.driver)
+            klienci.sprawdz_klienci_tabela(self.driver)
         )
-        klienci.hit_enter_on_osoby_kontaktowe_button(self.driver)
+        klienci.nacisnij_enter_na_osoby_kontaktowe_przycisk(self.driver)
 
         ############## Osoby kontaktowe ###############
 
         self.assertTrue(
-            klienci.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/customer/person')
+            klienci.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver, 'http://env20180415.abraks.pl/customer/person')
         )
         self.assertTrue(
-            klienci.check_klienci_logo(self.driver, 'Osoba Kontaktowa > Indeks')
+            klienci.sprawdz_klienci_logo(self.driver, 'Osoba Kontaktowa > Indeks')
         )
         self.assertTrue(
-            klienci.check_klienci_tabela(self.driver)
+            klienci.sprawdz_klienci_tabela(self.driver)
         )
-        klienci.hit_enter_on_ostrzezenia_button(self.driver)
+        klienci.nacisnij_enter_na_ostrzezenia_przycisk(self.driver)
 
         ############## Ostrzezenia ###############
         self.assertTrue(
-            klienci.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/customer/warning')
+            klienci.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver, 'http://env20180415.abraks.pl/customer/warning')
         )
         self.assertTrue(
-            klienci.check_klienci_logo(self.driver, u'Ostrzeżenie > Indeks')
+            klienci.sprawdz_klienci_logo(self.driver, u'Ostrzeżenie > Indeks')
         )
         self.assertTrue(
-            klienci.check_klienci_tabela(self.driver)
+            klienci.sprawdz_klienci_tabela(self.driver)
         )
-        sekretariat.hit_enter_on_sekretariat_button(self.driver)
+        sekretariat.nacisnij_enter_na_sekretariat_przycisk(self.driver)
         self.assertTrue(
             sekretariat.check_hitting_results_are_correct_dokumenty(self.driver, 'Dokumenty')
         )
-        sekretariat.hit_enter_on_sekretariat_dokumenty_button(self.driver)
+        sekretariat.nacisnij_enter_na_sekretariat_dokumenty_przycisk(self.driver)
 
         ########################## Sekretariat ###############
 
         ############## Dokumenty ###############
         self.assertTrue(
-            sekretariat.check_url_contains_correct_name_page(self.driver,
+            sekretariat.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver,
                                                              'http://env20180415.abraks.pl/secretariat/document')
         )
         self.assertTrue(
-            sekretariat.check_sekretariat_logo(self.driver, u'Dokument > Indeks')
+            sekretariat.sprawdz_sekretariat_logo(self.driver, u'Dokument > Indeks')
         )
         self.assertTrue(
-            sekretariat.check_sekretariat_tabela(self.driver)
+            sekretariat.sprawdz_sekretariat_tabela(self.driver)
         )
-        sekretariat.hit_enter_on_sekretariat_sprawy_button(self.driver)
+        sekretariat.nacisnij_enter_na_sekretariat_sprawy_przycisk(self.driver)
 
         ############## Sprawy ###############
         self.assertTrue(
-            sekretariat.check_url_contains_correct_name_page(self.driver,
+            sekretariat.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver,
                                                              'http://env20180415.abraks.pl/secretariat/inquiry')
         )
         self.assertTrue(
-            sekretariat.check_sekretariat_logo(self.driver, u'Sprawa > Indeks')
+            sekretariat.sprawdz_sekretariat_logo(self.driver, u'Sprawa > Indeks')
         )
         self.assertTrue(
-            sekretariat.check_sekretariat_tabela(self.driver)
+            sekretariat.sprawdz_sekretariat_tabela(self.driver)
         )
-        sekretariat.hit_enter_on_sekretariat_tematy_button(self.driver)
+        sekretariat.nacisnij_enter_na_sekretariat_tematy_przycisk(self.driver)
 
         ############## Tematy ###############
         self.assertTrue(
-            sekretariat.check_url_contains_correct_name_page(self.driver,
+            sekretariat.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver,
                                                              'http://env20180415.abraks.pl/secretariat/theme')
         )
         self.assertTrue(
-            sekretariat.check_sekretariat_logo(self.driver, u'Temat > Indeks')
+            sekretariat.sprawdz_sekretariat_logo(self.driver, u'Temat > Indeks')
         )
         self.assertTrue(
-            sekretariat.check_sekretariat_tabela(self.driver)
+            sekretariat.sprawdz_sekretariat_tabela(self.driver)
         )
-        sekretariat.hit_enter_on_sekretariat_ksiazki_listow_button(self.driver)
+        sekretariat.nacisnij_enter_na_sekretariat_ksiazki_listow_przycisk(self.driver)
 
         ############## Ksiazki Listowe ###############
         self.assertTrue(
-            sekretariat.check_url_contains_correct_name_page(self.driver,
+            sekretariat.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver,
                                                              'href="http://env20180415.abraks.pl/secretariat/summary"')
         )
         self.assertTrue(
-            sekretariat.check_sekretariat_logo(self.driver, u'Książka Listowa > Indeks')
+            sekretariat.sprawdz_sekretariat_logo(self.driver, u'Książka Listowa > Indeks')
         )
         self.assertTrue(
-            sekretariat.check_sekretariat_tabela(self.driver)
+            sekretariat.sprawdz_sekretariat_tabela(self.driver)
         )
-        sekretariat.hit_enter_on_sekretariat_pisma_przychodzace_button(self.driver)
+        sekretariat.nacisnij_enter_na_sekretariat_pisma_przychodzace_przycisk(self.driver)
 
         ############## Pisma Przychodzace ###############
         self.assertTrue(
-            sekretariat.check_url_contains_correct_name_page(self.driver,
+            sekretariat.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver,
                                                              'http://env20180415.abraks.pl/secretariat/inbound')
         )
         self.assertTrue(
-            sekretariat.check_sekretariat_logo(self.driver, u'Pismo Przychodzące > Indeks')
+            sekretariat.sprawdz_sekretariat_logo(self.driver, u'Pismo Przychodzące > Indeks')
         )
         self.assertTrue(
-            sekretariat.check_sekretariat_tabela(self.driver)
+            sekretariat.sprawdz_sekretariat_tabela(self.driver)
         )
-        sekretariat.hit_enter_on_sekretariat_pisma_wychodzace_button(self.driver)
+        sekretariat.nacisnij_enter_na_sekretariat_pisma_wychodzace_przycisk(self.driver)
 
         ############## Pisma Wychodzace ###############
         self.assertTrue(
-            sekretariat.check_url_contains_correct_name_page(self.driver,
+            sekretariat.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver,
                                                              'http://env20180415.abraks.pl/secretariat/outbound')
         )
         self.assertTrue(
-            sekretariat.check_sekretariat_logo(self.driver, u'Pismo Wychodzące > Indeks')
+            sekretariat.sprawdz_sekretariat_logo(self.driver, u'Pismo Wychodzące > Indeks')
         )
         self.assertTrue(
-            sekretariat.check_sekretariat_tabela(self.driver)
+            sekretariat.sprawdz_sekretariat_tabela(self.driver)
         )
-        sekretariat.hit_enter_on_sekretariat_urlopy_button(self.driver)
+        sekretariat.nacisnij_enter_na_sekretariat_urlopy_przycisk(self.driver)
 
         ############## Urlopy ###############
         self.assertTrue(
-            sekretariat.check_url_contains_correct_name_page(self.driver,
+            sekretariat.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver,
                                                              'http://env20180415.abraks.pl/secretariat/vacation')
         )
         self.assertTrue(
-            sekretariat.check_sekretariat_logo(self.driver, u'Urlop > Indeks')
+            sekretariat.sprawdz_sekretariat_logo(self.driver, u'Urlop > Indeks')
         )
         self.assertTrue(
-            sekretariat.check_sekretariat_tabela(self.driver)
+            sekretariat.sprawdz_sekretariat_tabela(self.driver)
         )
-        sekretariat.hit_enter_on_sekretariat_zadania_button(self.driver)
+        sekretariat.nacisnij_enter_na_sekretariat_zadania_przycisk(self.driver)
 
         ############## Zadania ###############
         self.assertTrue(
-            sekretariat.check_url_contains_correct_name_page(self.driver,
+            sekretariat.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver,
                                                              'http://env20180415.abraks.pl/secretariat/task')
         )
         self.assertTrue(
-            sekretariat.check_sekretariat_logo(self.driver, u'Zadanie > Indeks')
+            sekretariat.sprawdz_sekretariat_logo(self.driver, u'Zadanie > Indeks')
         )
         self.assertTrue(
-            sekretariat.check_sekretariat_tabela(self.driver)
+            sekretariat.sprawdz_sekretariat_tabela(self.driver)
         )
-        admin.hit_enter_on_admin_button(self.driver)
+        admin.nacisnij_enter_na_admin_przycisk(self.driver)
         self.assertTrue(
-            admin.check_hitting_results_are_correct_role(self.driver, 'Role')
+            admin.sprawdz_rezultat_nacisniecia_role(self.driver, 'Role')
         )
-        admin.hit_enter_on_admin_role_button(self.driver)
+        admin.nacisnij_enter_na_role_przycisk(self.driver)
 
         ###################### Admin ###############
 
         ############## Role ###############
         self.assertTrue(
-            admin.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/admin/role')
+            admin.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver, 'http://env20180415.abraks.pl/admin/role')
         )
         self.assertTrue(
-            admin.check_admin_logo(self.driver, u'Rola > Indeks')
+            admin.sprawdz_admin_logo(self.driver, u'Rola > Indeks')
         )
         self.assertTrue(
-            admin.check_admin_tabela(self.driver)
+            admin.sprawdz_admin_tabela(self.driver)
         )
-        admin.hit_enter_on_admin_uprawnienia_button(self.driver)
+        admin.nacisnij_enter_na_admin_uprawnienia_przycisk(self.driver)
 
         ############## Uprawnienia ###############
         self.assertTrue(
-            admin.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/admin/permission')
+            admin.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver, 'http://env20180415.abraks.pl/admin/permission')
         )
         self.assertTrue(
-            admin.check_admin_logo(self.driver, u'Uprawnienie > Indeks')
+            admin.sprawdz_admin_logo(self.driver, u'Uprawnienie > Indeks')
         )
         self.assertTrue(
-            admin.check_admin_tabela(self.driver)
+            admin.sprawdz_admin_tabela(self.driver)
         )
-        admin.hit_enter_on_admin_uzytkownicy_button(self.driver)
+        admin.nacisnij_enter_na_admin_uzytkownicy_przycisk(self.driver)
 
         ############## Uzytkownicy ###############
         self.assertTrue(
-            admin.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/admin/user')
+            admin.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver, 'http://env20180415.abraks.pl/admin/user')
         )
         self.assertTrue(
-            admin.check_admin_logo(self.driver, u'Użytkownik > Indeks')
+            admin.sprawdz_admin_logo(self.driver, u'Użytkownik > Indeks')
         )
         self.assertTrue(
-            admin.check_admin_tabela(self.driver)
+            admin.sprawdz_admin_tabela(self.driver)
         )
-        admin.hit_enter_on_admin_strony_button(self.driver)
+        admin.nacisnij_enter_na_admin_strony_przycisk(self.driver)
 
         ############## Strony ###############
         self.assertTrue(
-            admin.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/admin/page')
+            admin.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver, 'http://env20180415.abraks.pl/admin/page')
         )
         self.assertTrue(
-            admin.check_admin_logo(self.driver, u'Strona > Indeks')
+            admin.sprawdz_admin_logo(self.driver, u'Strona > Indeks')
         )
         self.assertTrue(
-            admin.check_admin_tabela(self.driver)
+            admin.sprawdz_admin_tabela(self.driver)
         )
-        admin.hit_enter_on_admin_ustawienia_button(self.driver)
+        admin.nacisnij_enter_na_admin_ustawienia_przycisk(self.driver)
 
         ############## Ustawienia ###############
         self.assertTrue(
-            admin.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/admin/setting')
+            admin.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver, 'http://env20180415.abraks.pl/admin/setting')
         )
         self.assertTrue(
-            admin.check_admin_logo(self.driver, u'Ustawienie > Indeks')
+            admin.sprawdz_admin_logo(self.driver, u'Ustawienie > Indeks')
         )
         self.assertTrue(
-            admin.check_admin_ustawienia_tabela(self.driver)
+            admin.sprawdz_admin_ustawienia_tabela(self.driver)
         )
-        admin.hit_enter_on_log_out_button(self.driver)
-        self.assertTrue(logowanie.check_top_logo_bar_is_visible(self.driver))
+        admin.nacisnij_enter_na_wyloguj_przycisk(self.driver)
+        self.assertTrue(logowanie.sprawdz_czy_gorne_logo_pasek_jest_widoczne(self.driver))
         self.assertTrue(
-            admin.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/login')
+            admin.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver, 'http://env20180415.abraks.pl/login')
         )
 
 

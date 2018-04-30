@@ -7,11 +7,11 @@ from lib.funkcje_pomocnicze import *
 # Logo Uzytkownik utworz
 __logo_utworz_uzytkownik = "//*[@id='content']/div/div/h1"
 
-# Anuluj button
-__anuluj_button = "//*[@id='admin_user_manage']/footer/a"
+# Anuluj przycisk
+__anuluj_przycisk = "//*[@id='admin_user_manage']/footer/a"
 
-# Dodaj Uzytkownika button
-__dodaj_uzytkownika_button = "//*[@id='admin_user_manage']/footer/button"
+# Dodaj Uzytkownika przycisk
+__dodaj_uzytkownika_przycisk = "//*[@id='admin_user_manage']/footer/button"
 
 # To pole jest wymagane
 __to_pole_jest_wymagane = "//*[@id='username-error']"
@@ -71,8 +71,8 @@ __typ_uzytkownika_wspolpracownik = "//*[@id='type']/option[2]"
 __typ_uzytkownika_gosc = "//*[@id='type']/option[2]"
 
 
-def check_logo_utworz_uzytkownik(driver_instance, text):
-    elem = wait_for_visibility_of_element(
+def sprawdz_logo_utworz_uzytkownik(driver_instance, text):
+    elem = poczekaj_na_widocznosc_elementu(
         driver_instance=driver_instance,
         xpath=__logo_utworz_uzytkownik
     )
@@ -80,158 +80,158 @@ def check_logo_utworz_uzytkownik(driver_instance, text):
     return elem_text == text
 
 
-def check_anuluj_button(driver_instance):
-    elem = wait_for_visibility_of_element(
+def sprawdz_anuluj_przycisk(driver_instance):
+    elem = poczekaj_na_widocznosc_elementu(
         driver_instance=driver_instance,
-        xpath=__anuluj_button
+        xpath=__anuluj_przycisk
     )
     return elem
 
 
-def check_dodaj_uzytkownik_button(driver_instance):
-    elem = wait_for_visibility_of_element(
+def sprawdz_dodaj_uzytkownik_przycisk(driver_instance):
+    elem = poczekaj_na_widocznosc_elementu(
         driver_instance=driver_instance,
-        xpath=__dodaj_uzytkownika_button
+        xpath=__dodaj_uzytkownika_przycisk
     )
     return elem
 
 
-def check_to_pole_jest_wymagane(driver_instance):
-    elem = wait_for_visibility_of_element(
+def sprawdz_to_pole_jest_wymagane(driver_instance):
+    elem = poczekaj_na_widocznosc_elementu(
         driver_instance=driver_instance,
         xpath=__to_pole_jest_wymagane
     )
     return elem
 
 
-def check_nazwa_uzytkownika_xpath(driver_instance):
-    elem = wait_for_visibility_of_element(
+def sprawdz_nazwa_uzytkownika_xpath(driver_instance):
+    elem = poczekaj_na_widocznosc_elementu(
         driver_instance=driver_instance,
         xpath=__nazwa_uzytkownika_xpath
     )
     return elem
 
 
-def hit_enter_on_anuluj_button(driver_instance):
-    click_enter_on_element(
+def nacisnij_enter_na_anuluj_przycisk(driver_instance):
+    nacisnij_enter_na_elemencie(
         driver_instance=driver_instance,
-        xpath=__anuluj_button
+        xpath=__anuluj_przycisk
     )
 
 
-def hit_enter_on_dodaj_uzytkownik_button(driver_instance):
-    click_enter_on_element(
+def nacisnij_enter_na_dodaj_uzytkownik_przycisk(driver_instance):
+    nacisnij_enter_na_elemencie(
         driver_instance=driver_instance,
-        xpath=__dodaj_uzytkownika_button
+        xpath=__dodaj_uzytkownika_przycisk
     )
 
 
-def input_text_to_nazwa_uzytkownika_xpath(driver_instance, text):
-    send_keys_to_element(
+def wprowadz_text_do_nazwa_uzytkownika_xpath(driver_instance, text):
+    wyslij_klucz_do_elementu(
         driver_instance=driver_instance,
         xpath=__nazwa_uzytkownika_xpath,
         text=text
     )
 
 
-def input_text_to_email_xpath(driver_instance, text):
-    send_keys_to_element(
+def wprowadz_text_do_email_xpath(driver_instance, text):
+    wyslij_klucz_do_elementu(
         driver_instance=driver_instance,
         xpath=__email_xpath,
         text=text
     )
 
 
-def input_text_to_imie_i_nazwisko_xpath(driver_instance, text):
-    send_keys_to_element(
+def wprowadz_text_do_imie_i_nazwisko_xpath(driver_instance, text):
+    wyslij_klucz_do_elementu(
         driver_instance=driver_instance,
         xpath=__imie_i_nazwisko_xpath,
         text=text
     )
 
 
-def input_text_to_telefon_xpath(driver_instance, text):
-    send_keys_to_element(
+def wprowadz_text_do_telefon_xpath(driver_instance, text):
+    wyslij_klucz_do_elementu(
         driver_instance=driver_instance,
         xpath=__telefon_xpath,
         text=text
     )
 
 
-def click_jezyk_polski_xpath(driver_instance):
-    elem = wait_for_presence_of_element(
+def kliknij_jezyk_polski_xpath(driver_instance):
+    elem = poczekaj_na_obecnosc_elementu(
         driver_instance=driver_instance,
         xpath=__jezyk_polski_xpath
     )
     elem.click()
 
 
-def click_jezyk_angielski_xpath(driver_instance):
-    elem = wait_for_presence_of_element(
+def kliknij_jezyk_angielski_xpath(driver_instance):
+    elem = poczekaj_na_obecnosc_elementu(
         driver_instance=driver_instance,
         xpath=__jezyk_angielski_xpath
     )
     elem.click()
 
 
-def click_aktywny_tak_xpath(driver_instance):
-    elem = wait_for_presence_of_element(
+def kliknij_aktywny_tak_xpath(driver_instance):
+    elem = poczekaj_na_obecnosc_elementu(
         driver_instance=driver_instance,
         xpath=__aktywny_tak_xpath
     )
     elem.click()
 
 
-def click_aktywny_nie_xpath(driver_instance):
-    elem = wait_for_presence_of_element(
+def kliknij_aktywny_nie_xpath(driver_instance):
+    elem = poczekaj_na_obecnosc_elementu(
         driver_instance=driver_instance,
         xpath=__aktywny_nie_xpath
     )
     elem.click()
 
 
-def click_regulamin_zaakceptowany_tak_xpath(driver_instance):
-    elem = wait_for_presence_of_element(
+def kliknij_regulamin_zaakceptowany_tak_xpath(driver_instance):
+    elem = poczekaj_na_obecnosc_elementu(
         driver_instance=driver_instance,
         xpath=__regulamin_zaakceptowany_tak_xpath
     )
     elem.click()
 
 
-def click_regulamin_zaakceptowany_nie_xpath(driver_instance):
-    elem = wait_for_presence_of_element(
+def kliknij_regulamin_zaakceptowany_nie_xpath(driver_instance):
+    elem = poczekaj_na_obecnosc_elementu(
         driver_instance=driver_instance,
         xpath=__regulamin_zaakceptowany_nie_xpath
     )
     elem.click()
 
 
-def click_typ_uzytkownika_wewnetrzny(driver_instance):
-    elem = wait_for_presence_of_element(
+def kliknij_typ_uzytkownika_wewnetrzny(driver_instance):
+    elem = poczekaj_na_obecnosc_elementu(
         driver_instance=driver_instance,
         xpath=__typ_uzytkownika_wewnetrzny
     )
     elem.click()
 
 
-def click_typ_uzytkownika_zewnetrzny(driver_instance):
-    elem = wait_for_presence_of_element(
+def kliknij_typ_uzytkownika_zewnetrzny(driver_instance):
+    elem = poczekaj_na_obecnosc_elementu(
         driver_instance=driver_instance,
         xpath=__typ_uzytkownika_zewnetrzny
     )
     elem.click()
 
 
-def click_typ_uzytkownika_wspolpracownik(driver_instance):
-    elem = wait_for_presence_of_element(
+def kliknij_typ_uzytkownika_wspolpracownik(driver_instance):
+    elem = poczekaj_na_obecnosc_elementu(
         driver_instance=driver_instance,
         xpath=__typ_uzytkownika_wspolpracownik
     )
     elem.click()
 
 
-def click_typ_uzytkownika_gosc(driver_instance):
-    elem = wait_for_presence_of_element(
+def kliknij_typ_uzytkownika_gosc(driver_instance):
+    elem = poczekaj_na_obecnosc_elementu(
         driver_instance=driver_instance,
         xpath=__typ_uzytkownika_gosc
     )

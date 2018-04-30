@@ -13,11 +13,11 @@ __uzytkownik_tabela = "//*[@id='widget-grid']/div[2]/article/div[1]/table"
 # Szukaj
 __szukaj_xpath = "//*[@id='search_box']"
 
-# Per page
-__per_page = "//*[@id='perpage']/option[1]"
+# Per strona
+__per_strona = "//*[@id='perpage']/option[1]"
 
-# Dodaj button
-__dodaj_button = "//*[@id='dt_basic_filter']/a"
+# Dodaj przycisk
+__dodaj_przycisk = "//*[@id='dt_basic_filter']/a"
 
 # Jezyk filtr
 __jezyk_filtr = "//*[@id='language']"
@@ -35,8 +35,8 @@ __typ_uzytkownika_filtr = "//*[@id='type']"
 __lista_uzytkownikow = "//*[@id='widget-grid']/div[2]/article/div[1]/table/tbody[1]/tr"
 
 
-def check_uzytkownik_logo(driver_instance, text):
-    elem = wait_for_visibility_of_element(
+def sprawdz_uzytkownik_logo(driver_instance, text):
+    elem = poczekaj_na_widocznosc_elementu(
         driver_instance=driver_instance,
         xpath=__uzytkownik_logo
     )
@@ -44,81 +44,80 @@ def check_uzytkownik_logo(driver_instance, text):
     return elem_text == text
 
 
-def check_uzytkownik_tabela(driver_instance):
-    elem = wait_for_visibility_of_element(
+def sprawdz_uzytkownik_tabela(driver_instance):
+    elem = poczekaj_na_widocznosc_elementu(
         driver_instance=driver_instance,
         xpath=__uzytkownik_tabela
     )
     return elem
 
 
-def check_uzytkownik_szukaj(driver_instance):
-    elem = wait_for_visibility_of_element(
+def sprawdz_uzytkownik_szukaj(driver_instance):
+    elem = poczekaj_na_widocznosc_elementu(
         driver_instance=driver_instance,
         xpath=__szukaj_xpath
     )
     return elem
 
 
-def check_uzytkownik_per_page(driver_instance):
-    elem = wait_for_visibility_of_element(
+def sprawdz_uzytkownik_per_strona(driver_instance):
+    elem = poczekaj_na_widocznosc_elementu(
         driver_instance=driver_instance,
-        xpath=__per_page
+        xpath=__per_strona
     )
     return elem
 
 
-def check_uzytkownik_dodaj_button(driver_instance):
-    elem = wait_for_visibility_of_element(
+def sprawdz_uzytkownik_dodaj_przycisk(driver_instance):
+    elem = poczekaj_na_widocznosc_elementu(
         driver_instance=driver_instance,
-        xpath=__dodaj_button
+        xpath=__dodaj_przycisk
     )
     return elem
 
 
-def check_uzytkownik_jezyk_filtr(driver_instance):
-    elem = wait_for_visibility_of_element(
+def sprawdz_uzytkownik_jezyk_filtr(driver_instance):
+    elem = poczekaj_na_widocznosc_elementu(
         driver_instance=driver_instance,
         xpath=__jezyk_filtr
     )
     return elem
 
 
-def check_uzytkownik_aktywny_filtr(driver_instance):
-    elem = wait_for_visibility_of_element(
+def sprawdz_uzytkownik_aktywny_filtr(driver_instance):
+    elem = poczekaj_na_widocznosc_elementu(
         driver_instance=driver_instance,
         xpath=__aktywny_filtr
     )
     return elem
 
 
-def check_uzytkownik_regulamin_zaakceptowany_filtr(driver_instance):
-    elem = wait_for_visibility_of_element(
+def sprawdz_uzytkownik_regulamin_zaakceptowany_filtr(driver_instance):
+    elem = poczekaj_na_widocznosc_elementu(
         driver_instance=driver_instance,
         xpath=__regulamin_zaakceptowany_filtr
     )
     return elem
 
 
-def check_uzytkownik_typ_uzytkownika_filtr(driver_instance):
-    elem = wait_for_visibility_of_element(
+def sprawdz_uzytkownik_typ_uzytkownika_filtr(driver_instance):
+    elem = poczekaj_na_widocznosc_elementu(
         driver_instance=driver_instance,
         xpath=__typ_uzytkownika_filtr
     )
     return elem
 
 
-def count_uzytkownikow_w_tabeli(driver_instance):
-    elems = wait_for_visibility_of_all_elements(
+def policz_uzytkownikow_w_tabeli(driver_instance):
+    elems = poczekaj_na_widocznosc_wszystkich_elementow(
         driver_instance=driver_instance,
         xpath=__lista_uzytkownikow
     )
-    print(len(elems))
     return len(elems)
 
 
-def hit_enter_on_dodaj_button(driver_instance):
-    click_enter_on_element(
+def nacisnij_enter_na_dodaj_przycisk(driver_instance):
+    nacisnij_enter_na_elemencie(
         driver_instance=driver_instance,
-        xpath=__dodaj_button
+        xpath=__dodaj_przycisk
     )
