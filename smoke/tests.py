@@ -1,8 +1,14 @@
 # -*- coding: utf-8 -*-
 
-import logowanie, pulpit, klienci, sekretariat, admin
 import unittest
+
 from selenium import webdriver
+
+import lib.admin as admin
+import lib.klienci as klienci
+import lib.logowanie as logowanie
+import lib.pulpit as pulpit
+import lib.sekretariat as sekretariat
 
 
 class tests(unittest.TestCase):
@@ -11,24 +17,17 @@ class tests(unittest.TestCase):
         self.driver.implicitly_wait(15)
         self.driver.maximize_window()
         self.driver.get("http://env20180415.abraks.pl/login")
+        logowanie.login(self, self.driver)
 
     def tearDown(self):
         self.driver.quit()
 
     def test_loging_correct_results(self):
-        input_text = "tester@abraks.pl"
-        input_text2 = "Rety$675"
-
-        self.assertTrue(logowanie.check_top_logo_bar_is_visible(self.driver))
-        logowanie.input_email_to_email_field(self.driver, input_text)
-        logowanie.input_password_to_password_field(self.driver, input_text2)
-        logowanie.hit_enter_on_logging_button(self.driver)
-
         self.assertTrue(
-           pulpit.check_loging_results_are_correct(self.driver, 'Pulpit > Indeks')
+            pulpit.check_loging_results_are_correct(self.driver, 'Pulpit > Indeks')
         )
         self.assertTrue(
-           pulpit.check_loging_results_are_correct_klinci(self.driver, 'Klienci')
+            pulpit.check_loging_results_are_correct_klinci(self.driver, 'Klienci')
         )
 
         self.assertTrue(
@@ -42,10 +41,11 @@ class tests(unittest.TestCase):
         )
         pulpit.hit_enter_on_kontrahenci_button(self.driver)
 
-##################### Klienci #############
-############# Kontrahenci #############
+        ##################### Klienci #############
+        ############# Kontrahenci #############
         self.assertTrue(
-            klienci.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/customer/contractor')
+            klienci.check_url_contains_correct_name_page(self.driver,
+                                                         'http://env20180415.abraks.pl/customer/contractor')
         )
         self.assertTrue(
             klienci.check_klienci_logo(self.driver, 'Kontrahent > Indeks')
@@ -54,9 +54,10 @@ class tests(unittest.TestCase):
             klienci.check_klienci_tabela(self.driver)
         )
         klienci.hit_enter_on_oddzialy_button(self.driver)
-############## Oddzialy ###############
+        ############## Oddzialy ###############
         self.assertTrue(
-            klienci.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/customer/department')
+            klienci.check_url_contains_correct_name_page(self.driver,
+                                                         'http://env20180415.abraks.pl/customer/department')
         )
         self.assertTrue(
             klienci.check_klienci_logo(self.driver, u'Oddział > Indeks')
@@ -66,7 +67,7 @@ class tests(unittest.TestCase):
         )
         klienci.hit_enter_on_osoby_kontaktowe_button(self.driver)
 
-############## Osoby kontaktowe ###############
+        ############## Osoby kontaktowe ###############
 
         self.assertTrue(
             klienci.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/customer/person')
@@ -79,7 +80,7 @@ class tests(unittest.TestCase):
         )
         klienci.hit_enter_on_ostrzezenia_button(self.driver)
 
-############## Ostrzezenia ###############
+        ############## Ostrzezenia ###############
         self.assertTrue(
             klienci.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/customer/warning')
         )
@@ -95,11 +96,12 @@ class tests(unittest.TestCase):
         )
         sekretariat.hit_enter_on_sekretariat_dokumenty_button(self.driver)
 
-########################## Sekretariat ###############
+        ########################## Sekretariat ###############
 
-############## Dokumenty ###############
+        ############## Dokumenty ###############
         self.assertTrue(
-            sekretariat.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/secretariat/document')
+            sekretariat.check_url_contains_correct_name_page(self.driver,
+                                                             'http://env20180415.abraks.pl/secretariat/document')
         )
         self.assertTrue(
             sekretariat.check_sekretariat_logo(self.driver, u'Dokument > Indeks')
@@ -109,9 +111,10 @@ class tests(unittest.TestCase):
         )
         sekretariat.hit_enter_on_sekretariat_sprawy_button(self.driver)
 
-############## Sprawy ###############
+        ############## Sprawy ###############
         self.assertTrue(
-            sekretariat.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/secretariat/inquiry')
+            sekretariat.check_url_contains_correct_name_page(self.driver,
+                                                             'http://env20180415.abraks.pl/secretariat/inquiry')
         )
         self.assertTrue(
             sekretariat.check_sekretariat_logo(self.driver, u'Sprawa > Indeks')
@@ -121,9 +124,10 @@ class tests(unittest.TestCase):
         )
         sekretariat.hit_enter_on_sekretariat_tematy_button(self.driver)
 
-############## Tematy ###############
+        ############## Tematy ###############
         self.assertTrue(
-            sekretariat.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/secretariat/theme')
+            sekretariat.check_url_contains_correct_name_page(self.driver,
+                                                             'http://env20180415.abraks.pl/secretariat/theme')
         )
         self.assertTrue(
             sekretariat.check_sekretariat_logo(self.driver, u'Temat > Indeks')
@@ -133,9 +137,10 @@ class tests(unittest.TestCase):
         )
         sekretariat.hit_enter_on_sekretariat_ksiazki_listow_button(self.driver)
 
-############## Ksiazki Listowe ###############
+        ############## Ksiazki Listowe ###############
         self.assertTrue(
-            sekretariat.check_url_contains_correct_name_page(self.driver, 'href="http://env20180415.abraks.pl/secretariat/summary"')
+            sekretariat.check_url_contains_correct_name_page(self.driver,
+                                                             'href="http://env20180415.abraks.pl/secretariat/summary"')
         )
         self.assertTrue(
             sekretariat.check_sekretariat_logo(self.driver, u'Książka Listowa > Indeks')
@@ -145,9 +150,10 @@ class tests(unittest.TestCase):
         )
         sekretariat.hit_enter_on_sekretariat_pisma_przychodzace_button(self.driver)
 
-############## Pisma Przychodzace ###############
+        ############## Pisma Przychodzace ###############
         self.assertTrue(
-            sekretariat.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/secretariat/inbound')
+            sekretariat.check_url_contains_correct_name_page(self.driver,
+                                                             'http://env20180415.abraks.pl/secretariat/inbound')
         )
         self.assertTrue(
             sekretariat.check_sekretariat_logo(self.driver, u'Pismo Przychodzące > Indeks')
@@ -157,9 +163,10 @@ class tests(unittest.TestCase):
         )
         sekretariat.hit_enter_on_sekretariat_pisma_wychodzace_button(self.driver)
 
-############## Pisma Wychodzace ###############
+        ############## Pisma Wychodzace ###############
         self.assertTrue(
-            sekretariat.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/secretariat/outbound')
+            sekretariat.check_url_contains_correct_name_page(self.driver,
+                                                             'http://env20180415.abraks.pl/secretariat/outbound')
         )
         self.assertTrue(
             sekretariat.check_sekretariat_logo(self.driver, u'Pismo Wychodzące > Indeks')
@@ -169,9 +176,10 @@ class tests(unittest.TestCase):
         )
         sekretariat.hit_enter_on_sekretariat_urlopy_button(self.driver)
 
-############## Urlopy ###############
+        ############## Urlopy ###############
         self.assertTrue(
-            sekretariat.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/secretariat/vacation')
+            sekretariat.check_url_contains_correct_name_page(self.driver,
+                                                             'http://env20180415.abraks.pl/secretariat/vacation')
         )
         self.assertTrue(
             sekretariat.check_sekretariat_logo(self.driver, u'Urlop > Indeks')
@@ -181,9 +189,10 @@ class tests(unittest.TestCase):
         )
         sekretariat.hit_enter_on_sekretariat_zadania_button(self.driver)
 
-############## Zadania ###############
+        ############## Zadania ###############
         self.assertTrue(
-            sekretariat.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/secretariat/task')
+            sekretariat.check_url_contains_correct_name_page(self.driver,
+                                                             'http://env20180415.abraks.pl/secretariat/task')
         )
         self.assertTrue(
             sekretariat.check_sekretariat_logo(self.driver, u'Zadanie > Indeks')
@@ -197,9 +206,9 @@ class tests(unittest.TestCase):
         )
         admin.hit_enter_on_admin_role_button(self.driver)
 
-###################### Admin ###############
+        ###################### Admin ###############
 
-############## Role ###############
+        ############## Role ###############
         self.assertTrue(
             admin.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/admin/role')
         )
@@ -211,7 +220,7 @@ class tests(unittest.TestCase):
         )
         admin.hit_enter_on_admin_uprawnienia_button(self.driver)
 
-############## Uprawnienia ###############
+        ############## Uprawnienia ###############
         self.assertTrue(
             admin.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/admin/permission')
         )
@@ -223,7 +232,7 @@ class tests(unittest.TestCase):
         )
         admin.hit_enter_on_admin_uzytkownicy_button(self.driver)
 
-############## Uzytkownicy ###############
+        ############## Uzytkownicy ###############
         self.assertTrue(
             admin.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/admin/user')
         )
@@ -235,7 +244,7 @@ class tests(unittest.TestCase):
         )
         admin.hit_enter_on_admin_strony_button(self.driver)
 
-############## Strony ###############
+        ############## Strony ###############
         self.assertTrue(
             admin.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/admin/page')
         )
@@ -247,7 +256,7 @@ class tests(unittest.TestCase):
         )
         admin.hit_enter_on_admin_ustawienia_button(self.driver)
 
-############## Ustawienia ###############
+        ############## Ustawienia ###############
         self.assertTrue(
             admin.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/admin/setting')
         )
@@ -262,6 +271,7 @@ class tests(unittest.TestCase):
         self.assertTrue(
             admin.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/login')
         )
+
 
 if __name__ == "__main__":
     unittest.main()

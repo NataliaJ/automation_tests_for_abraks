@@ -1,8 +1,12 @@
 # -*- coding: utf-8 -*-
 
-import logowanie, pulpit, uzytkownicy, nowy_uzytkownik
-import unittest
 import random
+import unittest
+
+import lib.logowanie as logowanie
+import lib.nowy_uzytkownik as nowy_uzytkownik
+import lib.pulpit as pulpit
+import lib.uzytkownicy as uzytkownicy
 from selenium import webdriver
 
 
@@ -26,7 +30,7 @@ class tests(unittest.TestCase):
         logowanie.hit_enter_on_logging_button(self.driver)
 
         self.assertTrue(
-           pulpit.check_loging_results_are_correct(self.driver, 'Pulpit > Indeks')
+            pulpit.check_loging_results_are_correct(self.driver, 'Pulpit > Indeks')
         )
 
         self.assertTrue(
@@ -34,7 +38,7 @@ class tests(unittest.TestCase):
         )
 
         self.assertTrue(
-           pulpit.check_loging_results_are_correct_admin(self.driver, 'Admin')
+            pulpit.check_loging_results_are_correct_admin(self.driver, 'Admin')
         )
 
         self.assertTrue(
@@ -48,7 +52,7 @@ class tests(unittest.TestCase):
         )
         pulpit.hit_enter_on_uzytkownicy_button(self.driver)
 
-############# Uzytkownicy ##########
+        ############# Uzytkownicy ##########
         self.assertTrue(
             uzytkownicy.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/admin/user')
         )
@@ -65,7 +69,7 @@ class tests(unittest.TestCase):
 
         uzytkownicy.hit_enter_on_dodaj_button(self.driver)
 
-############# Nowy Uzytkownik ######################
+        ############# Nowy Uzytkownik ######################
         user_number = str(random.randint(0, 10000000))
         user_name = 'test' + user_number
         user_name_last_name = user_name + ' ' + user_name
@@ -90,7 +94,7 @@ class tests(unittest.TestCase):
         nowy_uzytkownik.click_typ_uzytkownika_wewnetrzny(self.driver)
         nowy_uzytkownik.hit_enter_on_dodaj_uzytkownik_button(self.driver)
 
-############# Uzytkownicy ##########
+        ############# Uzytkownicy ##########
         self.assertTrue(
             uzytkownicy.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/admin/user')
         )
@@ -100,7 +104,7 @@ class tests(unittest.TestCase):
         num_uzytkownikow_po_dodaniu = uzytkownicy.count_uzytkownikow_w_tabeli(self.driver)
 
         # # # Asercja
-        self.assertGreater(num_uzytkownikow, num_uzytkownikow_po_dodaniu)
+        self.assertGreater(num_uzytkownikow_po_dodaniu, num_uzytkownikow)
 
     def test_R_Test_5(self):
         input_text = "tester@abraks.pl"
@@ -112,7 +116,7 @@ class tests(unittest.TestCase):
         logowanie.hit_enter_on_logging_button(self.driver)
 
         self.assertTrue(
-           pulpit.check_loging_results_are_correct(self.driver, 'Pulpit > Indeks')
+            pulpit.check_loging_results_are_correct(self.driver, 'Pulpit > Indeks')
         )
 
         self.assertTrue(
@@ -120,7 +124,7 @@ class tests(unittest.TestCase):
         )
 
         self.assertTrue(
-           pulpit.check_loging_results_are_correct_admin(self.driver, 'Admin')
+            pulpit.check_loging_results_are_correct_admin(self.driver, 'Admin')
         )
 
         self.assertTrue(
@@ -134,7 +138,7 @@ class tests(unittest.TestCase):
         )
         pulpit.hit_enter_on_uzytkownicy_button(self.driver)
 
-############# Uzytkownicy ##########
+        ############# Uzytkownicy ##########
         self.assertTrue(
             uzytkownicy.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/admin/user')
         )
@@ -151,7 +155,7 @@ class tests(unittest.TestCase):
 
         uzytkownicy.hit_enter_on_dodaj_button(self.driver)
 
-############# Nowy Uzytkownik ######################
+        ############# Nowy Uzytkownik ######################
         user_number = str(random.randint(0, 10000000))
         user_name = 'test' + user_number
         user_name_last_name = user_name + ' ' + user_name
@@ -176,7 +180,7 @@ class tests(unittest.TestCase):
         nowy_uzytkownik.click_typ_uzytkownika_zewnetrzny(self.driver)
         nowy_uzytkownik.hit_enter_on_dodaj_uzytkownik_button(self.driver)
 
-############# Uzytkownicy ##########
+        ############# Uzytkownicy ##########
         self.assertTrue(
             uzytkownicy.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/admin/user')
         )
@@ -186,8 +190,7 @@ class tests(unittest.TestCase):
         num_uzytkownikow_po_dodaniu = uzytkownicy.count_uzytkownikow_w_tabeli(self.driver)
 
         # # # Asercja
-        self.assertGreater(num_uzytkownikow, num_uzytkownikow_po_dodaniu)
-
+        self.assertGreater(num_uzytkownikow_po_dodaniu, num_uzytkownikow)
 
     def test_R_Test_6(self):
         input_text = "tester@abraks.pl"
@@ -199,7 +202,7 @@ class tests(unittest.TestCase):
         logowanie.hit_enter_on_logging_button(self.driver)
 
         self.assertTrue(
-           pulpit.check_loging_results_are_correct(self.driver, 'Pulpit > Indeks')
+            pulpit.check_loging_results_are_correct(self.driver, 'Pulpit > Indeks')
         )
 
         self.assertTrue(
@@ -207,7 +210,7 @@ class tests(unittest.TestCase):
         )
 
         self.assertTrue(
-           pulpit.check_loging_results_are_correct_admin(self.driver, 'Admin')
+            pulpit.check_loging_results_are_correct_admin(self.driver, 'Admin')
         )
 
         self.assertTrue(
@@ -221,7 +224,7 @@ class tests(unittest.TestCase):
         )
         pulpit.hit_enter_on_uzytkownicy_button(self.driver)
 
-############# Uzytkownicy ##########
+        ############# Uzytkownicy ##########
         self.assertTrue(
             uzytkownicy.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/admin/user')
         )
@@ -238,7 +241,7 @@ class tests(unittest.TestCase):
 
         uzytkownicy.hit_enter_on_dodaj_button(self.driver)
 
-############# Nowy Uzytkownik ######################
+        ############# Nowy Uzytkownik ######################
         user_number = str(random.randint(0, 10000000))
         user_name = 'test' + user_number
         user_name_last_name = user_name + ' ' + user_name
@@ -263,7 +266,7 @@ class tests(unittest.TestCase):
         nowy_uzytkownik.click_typ_uzytkownika_wspolpracownik(self.driver)
         nowy_uzytkownik.hit_enter_on_dodaj_uzytkownik_button(self.driver)
 
-############# Uzytkownicy ##########
+        ############# Uzytkownicy ##########
         self.assertTrue(
             uzytkownicy.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/admin/user')
         )
@@ -273,8 +276,7 @@ class tests(unittest.TestCase):
         num_uzytkownikow_po_dodaniu = uzytkownicy.count_uzytkownikow_w_tabeli(self.driver)
 
         # # # Asercja
-        self.assertGreater(num_uzytkownikow, num_uzytkownikow_po_dodaniu)
-
+        self.assertGreater(num_uzytkownikow_po_dodaniu, num_uzytkownikow)
 
     def test_R_Test_7(self):
         input_text = "tester@abraks.pl"
@@ -286,7 +288,7 @@ class tests(unittest.TestCase):
         logowanie.hit_enter_on_logging_button(self.driver)
 
         self.assertTrue(
-           pulpit.check_loging_results_are_correct(self.driver, 'Pulpit > Indeks')
+            pulpit.check_loging_results_are_correct(self.driver, 'Pulpit > Indeks')
         )
 
         self.assertTrue(
@@ -294,7 +296,7 @@ class tests(unittest.TestCase):
         )
 
         self.assertTrue(
-           pulpit.check_loging_results_are_correct_admin(self.driver, 'Admin')
+            pulpit.check_loging_results_are_correct_admin(self.driver, 'Admin')
         )
 
         self.assertTrue(
@@ -308,7 +310,7 @@ class tests(unittest.TestCase):
         )
         pulpit.hit_enter_on_uzytkownicy_button(self.driver)
 
-############# Uzytkownicy ##########
+        ############# Uzytkownicy ##########
         self.assertTrue(
             uzytkownicy.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/admin/user')
         )
@@ -325,7 +327,7 @@ class tests(unittest.TestCase):
 
         uzytkownicy.hit_enter_on_dodaj_button(self.driver)
 
-############# Nowy Uzytkownik ######################
+        ############# Nowy Uzytkownik ######################
         user_number = str(random.randint(0, 10000000))
         user_name = 'test' + user_number
         user_name_last_name = user_name + ' ' + user_name
@@ -350,7 +352,7 @@ class tests(unittest.TestCase):
         nowy_uzytkownik.click_typ_uzytkownika_gosc(self.driver)
         nowy_uzytkownik.hit_enter_on_dodaj_uzytkownik_button(self.driver)
 
-############# Uzytkownicy ##########
+        ############# Uzytkownicy ##########
         self.assertTrue(
             uzytkownicy.check_url_contains_correct_name_page(self.driver, 'http://env20180415.abraks.pl/admin/user')
         )
@@ -360,7 +362,8 @@ class tests(unittest.TestCase):
         num_uzytkownikow_po_dodaniu = uzytkownicy.count_uzytkownikow_w_tabeli(self.driver)
 
         # # # Asercja
-        self.assertGreater(num_uzytkownikow, num_uzytkownikow_po_dodaniu)
+        self.assertGreater(num_uzytkownikow_po_dodaniu, num_uzytkownikow)
+
 
 if __name__ == "__main__":
     unittest.main()
