@@ -24,6 +24,12 @@ class tests(unittest.TestCase):
 
     def test_loging_correct_results(self):
         self.assertTrue(
+            pulpit.sprawdz_poprawnosc_logowania_logo(self.driver)
+        )
+        self.assertTrue(
+            logowanie.sprawdz_czy_przycisk_wyloguj_jest_widoczny(self.driver)
+        )
+        self.assertTrue(
             pulpit.sprawdz_poprawnosc_logowania(self.driver, 'Pulpit > Indeks')
         )
         self.assertTrue(
@@ -33,6 +39,11 @@ class tests(unittest.TestCase):
         self.assertTrue(
             pulpit.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver, 'http://env20180415.abraks.pl/')
         )
+        num_widgetow = pulpit.policz_widgety_w_tabeli(self.driver)
+        num_widgetow_poprawnie = 7
+
+        # # Porownanie
+        self.assertItemEqual(num_widgetow, num_widgetow_poprawnie)
 
         pulpit.nacisnij_enter_na_klienci_przycisk(self.driver)
 
@@ -266,11 +277,14 @@ class tests(unittest.TestCase):
         self.assertTrue(
             admin.sprawdz_admin_ustawienia_tabela(self.driver)
         )
-        admin.nacisnij_enter_na_wyloguj_przycisk(self.driver)
+        logowanie.nacisnij_enter_na_wyloguj_przycisk(self.driver)
         self.assertTrue(logowanie.sprawdz_czy_gorne_logo_pasek_jest_widoczne(self.driver))
         self.assertTrue(
             admin.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver, 'http://env20180415.abraks.pl/login')
         )
+
+    def assertItemEqual(self, num_widgetow, num_widgetow_poprawnie):
+        pass
 
 
 if __name__ == "__main__":

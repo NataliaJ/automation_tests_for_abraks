@@ -19,6 +19,8 @@ __pole_haslo_xpath = "//*[@id='password']"
 # Przycisk logowania
 __przycisk_logowania_xpath = "//*[@id='login-form']/footer/button"
 
+# Wyloguj przycisk
+__wyloguj_przycisk = "//*[@id='logout']/span/a"
 
 def login(test, driver_instance):
     input_text = "tester@abraks.pl"
@@ -67,3 +69,16 @@ def nacisnij_enter_naprzycisk_logowania(driver_instance):
         driver_instance=driver_instance,
         xpath=__przycisk_logowania_xpath
     )
+
+def nacisnij_enter_na_wyloguj_przycisk(driver_instance):
+    nacisnij_enter_na_elemencie(
+        driver_instance=driver_instance,
+        xpath=__wyloguj_przycisk
+    )
+
+def sprawdz_czy_przycisk_wyloguj_jest_widoczny(driver_instance):
+    elem = poczekaj_na_widocznosc_elementu(
+        driver_instance=driver_instance,
+        xpath=__wyloguj_przycisk
+    )
+    return elem.is_displayed()

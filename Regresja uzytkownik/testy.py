@@ -21,6 +21,7 @@ class tests(unittest.TestCase):
         self.driver.quit()
 
     def test_R_Test_1(self):
+
         self.assertTrue(
             pulpit.sprawdz_poprawnosc_logowania(self.driver, 'Pulpit > Indeks')
         )
@@ -139,6 +140,7 @@ class tests(unittest.TestCase):
         self.assertItemEqual(num_uzytkownikow, num_uzytkownikow_po_dodaniu)
 
     def test_R_Test_3(self):
+
         self.assertTrue(
             pulpit.sprawdz_poprawnosc_logowania(self.driver, 'Pulpit > Indeks')
         )

@@ -4,6 +4,9 @@ from lib.funkcje_pomocnicze import *
 
 # Xpaths
 
+# Logo strony
+__pulpit_logo_strony_xpath = "//*[@id='logo']/img"
+
 # Logo pulpitu
 __pulpit_logo_xpath = "//*[@id='content']/div/div/h1"
 
@@ -22,8 +25,14 @@ __pulpit_klienci_xpath = "//*[@id='left-panel']/nav/ul/li[2]/a"
 __pulpit_kontrahenci_przycisk_xpath = "//*[@id='left-panel']/nav/ul/li[2]/ul/li[1]/a"
 
 # Widzety na pulpicie
-__pulpit_widzet_xpath = "//*[@id='widget-grid']/div[2]/article"
+__pulpit_widzet_xpath = "//*[@id='widget-grid']/div[2]/article/article"
 
+def sprawdz_poprawnosc_logowania_logo(driver_instance):
+    elem = poczekaj_na_widocznosc_elementu_po_logowaniu(
+        driver_instance=driver_instance,
+        xpath=__pulpit_logo_strony_xpath
+    )
+    return elem
 
 def sprawdz_poprawnosc_logowania(driver_instance, text):
     elem = poczekaj_na_widocznosc_elementu_po_logowaniu(
@@ -95,3 +104,11 @@ def nacisnij_enter_na_kontrahenci_przycisk(driver_instance):
         driver_instance=driver_instance,
         xpath=__pulpit_kontrahenci_przycisk_xpath
     )
+
+
+def policz_widgety_w_tabeli(driver_instance):
+    elems = poczekaj_na_widocznosc_wszystkich_elementow(
+        driver_instance=driver_instance,
+        xpath=__pulpit_widzet_xpath
+    )
+    return len(elems)

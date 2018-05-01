@@ -31,9 +31,6 @@ __admin_strony_przycisk = "//*[@id='left-panel']/nav/ul/li[4]/ul/li[4]/a"
 # Ustawienia przycisk
 __admin_ustawienia_przycisk = "//*[@id='left-panel']/nav/ul/li[4]/ul/li[5]/a"
 
-# Wyloguj przycisk
-__wyloguj_przycisk = "//*[@id='logout']/span/a"
-
 
 def nacisnij_enter_na_admin_przycisk(driver_instance):
     nacisnij_enter_na_elemencie(
@@ -111,8 +108,4 @@ def sprawdz_admin_ustawienia_tabela(driver_instance):
     return elem
 
 
-def nacisnij_enter_na_wyloguj_przycisk(driver_instance):
-    nacisnij_enter_na_elemencie(
-        driver_instance=driver_instance,
-        xpath=__wyloguj_przycisk
-    )
+

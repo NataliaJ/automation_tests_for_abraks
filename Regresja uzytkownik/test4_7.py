@@ -16,18 +16,12 @@ class tests(unittest.TestCase):
         self.driver.implicitly_wait(15)
         self.driver.maximize_window()
         self.driver.get("http://env20180415.abraks.pl/login")
+        logowanie.login(self, self.driver)
 
     def tearDown(self):
         self.driver.quit()
 
     def test_R_Test_4(self):
-        input_text = "tester@abraks.pl"
-        input_text2 = "Rety$675"
-
-        self.assertTrue(logowanie.sprawdz_czy_gorne_logo_pasek_jest_widoczne(self.driver))
-        logowanie.wprowadz_email_do_pole_email(self.driver, input_text)
-        logowanie.wprowadz_haslo_do_pole_haslo(self.driver, input_text2)
-        logowanie.nacisnij_enter_naprzycisk_logowania(self.driver)
 
         self.assertTrue(
             pulpit.sprawdz_poprawnosc_logowania(self.driver, 'Pulpit > Indeks')
@@ -107,13 +101,6 @@ class tests(unittest.TestCase):
         self.assertGreater(num_uzytkownikow_po_dodaniu, num_uzytkownikow)
 
     def test_R_Test_5(self):
-        input_text = "tester@abraks.pl"
-        input_text2 = "Rety$675"
-
-        self.assertTrue(logowanie.sprawdz_czy_gorne_logo_pasek_jest_widoczne(self.driver))
-        logowanie.wprowadz_email_do_pole_email(self.driver, input_text)
-        logowanie.wprowadz_haslo_do_pole_haslo(self.driver, input_text2)
-        logowanie.nacisnij_enter_naprzycisk_logowania(self.driver)
 
         self.assertTrue(
             pulpit.sprawdz_poprawnosc_logowania(self.driver, 'Pulpit > Indeks')
@@ -193,13 +180,6 @@ class tests(unittest.TestCase):
         self.assertGreater(num_uzytkownikow_po_dodaniu, num_uzytkownikow)
 
     def test_R_Test_6(self):
-        input_text = "tester@abraks.pl"
-        input_text2 = "Rety$675"
-
-        self.assertTrue(logowanie.sprawdz_czy_gorne_logo_pasek_jest_widoczne(self.driver))
-        logowanie.wprowadz_email_do_pole_email(self.driver, input_text)
-        logowanie.wprowadz_haslo_do_pole_haslo(self.driver, input_text2)
-        logowanie.nacisnij_enter_naprzycisk_logowania(self.driver)
 
         self.assertTrue(
             pulpit.sprawdz_poprawnosc_logowania(self.driver, 'Pulpit > Indeks')
@@ -279,13 +259,6 @@ class tests(unittest.TestCase):
         self.assertGreater(num_uzytkownikow_po_dodaniu, num_uzytkownikow)
 
     def test_R_Test_7(self):
-        input_text = "tester@abraks.pl"
-        input_text2 = "Rety$675"
-
-        self.assertTrue(logowanie.sprawdz_czy_gorne_logo_pasek_jest_widoczne(self.driver))
-        logowanie.wprowadz_email_do_pole_email(self.driver, input_text)
-        logowanie.wprowadz_haslo_do_pole_haslo(self.driver, input_text2)
-        logowanie.nacisnij_enter_naprzycisk_logowania(self.driver)
 
         self.assertTrue(
             pulpit.sprawdz_poprawnosc_logowania(self.driver, 'Pulpit > Indeks')
