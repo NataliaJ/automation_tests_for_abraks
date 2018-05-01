@@ -10,8 +10,14 @@ __admin_logo = "//*[@id='content']/div/div/h1"
 # Tabela - taki sam xpath na kazdej stronie
 __admin_tabela = "//*[@id='widget-grid']/div[2]/article/div[1]/table"
 
-# Tabela ustawienia
-__admin_ustawienia_tabela = "//*[@id='wid-id-application_settings']/header"
+# Tabela ustawienia aplikacji
+__admin_ustawienia_aplikacji_tabela = "//*[@id='wid-id-application_settings']/header"
+
+# Tabela ustawienia firmy
+__admin_ustawienia_firmy_tabela = "//*[@id='wid-id-company_settings']/header"
+
+# Tabela ustawienia sekcji Meta
+__admin_ustawienia_sekcji_meta_tabela = "//*[@id='wid-id-meta_settings']/header"
 
 # Admin przycisk
 __admin_przycisk = "//*[@id='left-panel']/nav/ul/li[4]/a"
@@ -100,12 +106,24 @@ def nacisnij_enter_na_admin_ustawienia_przycisk(driver_instance):
     )
 
 
-def sprawdz_admin_ustawienia_tabela(driver_instance):
+def sprawdz_admin_ustawienia_aplikacji_tabela(driver_instance):
     elem = poczekaj_na_widocznosc_elementu(
         driver_instance=driver_instance,
-        xpath=__admin_ustawienia_tabela
+        xpath=__admin_ustawienia_aplikacji_tabela
     )
     return elem
 
+def sprawdz_admin_ustawienia_firmy_tabela(driver_instance):
+    elem = poczekaj_na_widocznosc_elementu(
+        driver_instance=driver_instance,
+        xpath=__admin_ustawienia_firmy_tabela
+    )
+    return elem
 
+def sprawdz_admin_ustawienia_sekcji_meta_tabela(driver_instance):
+    elem = poczekaj_na_widocznosc_elementu(
+        driver_instance=driver_instance,
+        xpath=__admin_ustawienia_sekcji_meta_tabela
+    )
+    return elem
 

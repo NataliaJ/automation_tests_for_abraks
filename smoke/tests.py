@@ -275,7 +275,13 @@ class tests(unittest.TestCase):
             admin.sprawdz_admin_logo(self.driver, u'Ustawienie > Indeks')
         )
         self.assertTrue(
-            admin.sprawdz_admin_ustawienia_tabela(self.driver)
+            admin.sprawdz_admin_ustawienia_aplikacji_tabela(self.driver)
+        )
+        self.assertTrue(
+            admin.sprawdz_admin_ustawienia_firmy_tabela(self.driver)
+        )
+        self.assertTrue(
+            admin.sprawdz_admin_ustawienia_sekcji_meta_tabela(self.driver)
         )
         logowanie.nacisnij_enter_na_wyloguj_przycisk(self.driver)
         self.assertTrue(logowanie.sprawdz_czy_gorne_logo_pasek_jest_widoczne(self.driver))
