@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from lib.funkcje_pomocnicze import *
+from Funkcje.funkcje_pomocnicze import *
 
 # Xpaths
 

@@ -2,10 +2,10 @@
 
 import unittest
 
-import lib.logowanie as logowanie
-import lib.nowy_uzytkownik as nowy_uzytkownik
-import lib.pulpit as pulpit
-import lib.uzytkownicy as uzytkownicy
+import Funkcje.logowanie as logowanie
+import Funkcje.nowy_uzytkownik as nowy_uzytkownik
+import Funkcje.pulpit as pulpit
+import Funkcje.uzytkownicy as uzytkownicy
 from selenium import webdriver
 
 

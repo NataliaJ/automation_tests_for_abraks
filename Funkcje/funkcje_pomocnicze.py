@@ -5,7 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
 
-def poczekaj_na_widocznosc_elementu(driver_instance, xpath, time_to_wait=8):
+def poczekaj_na_widocznosc_elementu(driver_instance, xpath, time_to_wait=3):
     elem = WebDriverWait(driver_instance, time_to_wait).until(
         EC.visibility_of_element_located((By.XPATH, xpath))
     )
@@ -26,7 +26,7 @@ def poczekaj_na_widocznosc_wszystkich_elementow(driver_instance, xpath, time_to_
     return elems
 
 
-def poczekaj_na_obecnosc_elementu(driver_instance, xpath, time_to_wait=8):
+def poczekaj_na_obecnosc_elementu(driver_instance, xpath, time_to_wait=5):
     elem = WebDriverWait(driver_instance, time_to_wait).until(
         EC.presence_of_element_located((By.XPATH, xpath))
     )

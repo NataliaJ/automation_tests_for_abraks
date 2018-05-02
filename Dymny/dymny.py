@@ -4,11 +4,11 @@ import unittest
 
 from selenium import webdriver
 
-import lib.admin as admin
-import lib.klienci as klienci
-import lib.logowanie as logowanie
-import lib.pulpit as pulpit
-import lib.sekretariat as sekretariat
+import Funkcje.admin as admin
+import Funkcje.klienci as klienci
+import Funkcje.logowanie as logowanie
+import Funkcje.pulpit as pulpit
+import Funkcje.sekretariat as sekretariat
 
 
 class tests(unittest.TestCase):
