@@ -26,7 +26,12 @@ def login(test, driver_instance):
     input_text = "tester@abraks.pl"
     input_text2 = "Rety$675"
 
-    test.assertTrue(sprawdz_czy_gorne_logo_pasek_jest_widoczne(driver_instance))
+    test.assertTrue(
+        sprawdz_czy_gorne_logo_pasek_jest_widoczne(driver_instance)
+    )
+    test.assertTrue(
+        sprawdz_czy_sekcja_logowania_jest_widoczna(driver_instance)
+    )
     wprowadz_email_do_pole_email(driver_instance, input_text)
     wprowadz_haslo_do_pole_haslo(driver_instance, input_text2)
     nacisnij_enter_naprzycisk_logowania(driver_instance)

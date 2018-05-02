@@ -284,7 +284,12 @@ class tests(unittest.TestCase):
             admin.sprawdz_admin_ustawienia_sekcji_meta_tabela(self.driver)
         )
         logowanie.nacisnij_enter_na_wyloguj_przycisk(self.driver)
-        self.assertTrue(logowanie.sprawdz_czy_gorne_logo_pasek_jest_widoczne(self.driver))
+        self.assertTrue(
+            logowanie.sprawdz_czy_gorne_logo_pasek_jest_widoczne(self.driver)
+        )
+        self.assertTrue(
+            logowanie.sprawdz_czy_sekcja_logowania_jest_widoczna(self.driver)
+        )
         self.assertTrue(
             admin.sprawdz_czy_strona_zawiera_poprawna_nazwe(self.driver, 'http://env20180415.abraks.pl/login')
         )
