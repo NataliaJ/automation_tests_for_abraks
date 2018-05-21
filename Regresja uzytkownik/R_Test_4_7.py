@@ -64,11 +64,11 @@ class tests(unittest.TestCase):
         uzytkownicy.nacisnij_enter_na_dodaj_przycisk(self.driver)
 
         ############# Nowy Uzytkownik ######################
-        user_number = str(random.randint(0, 10000000))
-        user_name = 'test' + user_number
-        user_name_last_name = user_name + ' ' + user_name
-        user_email = user_name + '@o2.pl'
-        user_telefon_number = '123456789'
+        numer_uzytkownika = str(random.randint(0, 10000000))
+        imie_uzytkownika = 'test' + numer_uzytkownika
+        imie_i_nazwisko_uzytkownika = imie_uzytkownika + ' ' + imie_uzytkownika
+        email_uzytkownika = imie_uzytkownika + '@o2.pl'
+        telefon_uzytkownika = '123456789'
         self.assertTrue(
             nowy_uzytkownik.sprawdz_logo_utworz_uzytkownik(self.driver, u'Użytkownik > Utwórz')
         )
@@ -78,10 +78,10 @@ class tests(unittest.TestCase):
         self.assertTrue(
             nowy_uzytkownik.sprawdz_anuluj_przycisk(self.driver)
         )
-        nowy_uzytkownik.wprowadz_text_do_nazwa_uzytkownika_xpath(self.driver, user_name)
-        nowy_uzytkownik.wprowadz_text_do_email_xpath(self.driver, user_email)
-        nowy_uzytkownik.wprowadz_text_do_imie_i_nazwisko_xpath(self.driver, user_name_last_name)
-        nowy_uzytkownik.wprowadz_text_do_telefon_xpath(self.driver, user_telefon_number)
+        nowy_uzytkownik.wprowadz_text_do_nazwa_uzytkownika_xpath(self.driver, imie_uzytkownika)
+        nowy_uzytkownik.wprowadz_text_do_email_xpath(self.driver, email_uzytkownika)
+        nowy_uzytkownik.wprowadz_text_do_imie_i_nazwisko_xpath(self.driver, imie_i_nazwisko_uzytkownika)
+        nowy_uzytkownik.wprowadz_text_do_telefon_xpath(self.driver, telefon_uzytkownika)
         nowy_uzytkownik.kliknij_jezyk_polski_xpath(self.driver)
         nowy_uzytkownik.kliknij_aktywny_tak_xpath(self.driver)
         nowy_uzytkownik.kliknij_regulamin_zaakceptowany_tak_xpath(self.driver)
@@ -143,11 +143,11 @@ class tests(unittest.TestCase):
         uzytkownicy.nacisnij_enter_na_dodaj_przycisk(self.driver)
 
         ############# Nowy Uzytkownik ######################
-        user_number = str(random.randint(0, 10000000))
-        user_name = 'test' + user_number
-        user_name_last_name = user_name + ' ' + user_name
-        user_email = user_name + '@o2.pl'
-        user_telefon_number = '123456789'
+        numer_uzytkownika = str(random.randint(0, 10000000))
+        imie_uzytkownika = 'test' + numer_uzytkownika
+        imie_i_nazwisko_uzytkownika = imie_uzytkownika + ' ' + imie_uzytkownika
+        email_uzytkownika = imie_uzytkownika + '@o2.pl'
+        telefon_uzytkownika = '123456789'
         self.assertTrue(
             nowy_uzytkownik.sprawdz_logo_utworz_uzytkownik(self.driver, u'Użytkownik > Utwórz')
         )
@@ -157,10 +157,10 @@ class tests(unittest.TestCase):
         self.assertTrue(
             nowy_uzytkownik.sprawdz_anuluj_przycisk(self.driver)
         )
-        nowy_uzytkownik.wprowadz_text_do_nazwa_uzytkownika_xpath(self.driver, user_name)
-        nowy_uzytkownik.wprowadz_text_do_email_xpath(self.driver, user_email)
-        nowy_uzytkownik.wprowadz_text_do_imie_i_nazwisko_xpath(self.driver, user_name_last_name)
-        nowy_uzytkownik.wprowadz_text_do_telefon_xpath(self.driver, user_telefon_number)
+        nowy_uzytkownik.wprowadz_text_do_nazwa_uzytkownika_xpath(self.driver, imie_uzytkownika)
+        nowy_uzytkownik.wprowadz_text_do_email_xpath(self.driver, email_uzytkownika)
+        nowy_uzytkownik.wprowadz_text_do_imie_i_nazwisko_xpath(self.driver, imie_i_nazwisko_uzytkownika)
+        nowy_uzytkownik.wprowadz_text_do_telefon_xpath(self.driver, telefon_uzytkownika)
         nowy_uzytkownik.kliknij_jezyk_angielski_xpath(self.driver)
         nowy_uzytkownik.kliknij_aktywny_tak_xpath(self.driver)
         nowy_uzytkownik.kliknij_regulamin_zaakceptowany_tak_xpath(self.driver)
@@ -222,11 +222,11 @@ class tests(unittest.TestCase):
         uzytkownicy.nacisnij_enter_na_dodaj_przycisk(self.driver)
 
         ############# Nowy Uzytkownik ######################
-        user_number = str(random.randint(0, 10000000))
-        user_name = 'test' + user_number
-        user_name_last_name = user_name + ' ' + user_name
-        user_email = user_name + '@o2.pl'
-        user_telefon_number = '123456789'
+        numer_uzytkownika = str(random.randint(0, 10000000))
+        imie_uzytkownika = 'test' + numer_uzytkownika
+        imie_i_nazwisko_uzytkownika = imie_uzytkownika + ' ' + imie_uzytkownika
+        email_uzytkownika = imie_uzytkownika + '@o2.pl'
+        telefon_uzytkownika = '123456789'
         self.assertTrue(
             nowy_uzytkownik.sprawdz_logo_utworz_uzytkownik(self.driver, u'Użytkownik > Utwórz')
         )
@@ -236,10 +236,10 @@ class tests(unittest.TestCase):
         self.assertTrue(
             nowy_uzytkownik.sprawdz_anuluj_przycisk(self.driver)
         )
-        nowy_uzytkownik.wprowadz_text_do_nazwa_uzytkownika_xpath(self.driver, user_name)
-        nowy_uzytkownik.wprowadz_text_do_email_xpath(self.driver, user_email)
-        nowy_uzytkownik.wprowadz_text_do_imie_i_nazwisko_xpath(self.driver, user_name_last_name)
-        nowy_uzytkownik.wprowadz_text_do_telefon_xpath(self.driver, user_telefon_number)
+        nowy_uzytkownik.wprowadz_text_do_nazwa_uzytkownika_xpath(self.driver, imie_uzytkownika)
+        nowy_uzytkownik.wprowadz_text_do_email_xpath(self.driver, email_uzytkownika)
+        nowy_uzytkownik.wprowadz_text_do_imie_i_nazwisko_xpath(self.driver, imie_i_nazwisko_uzytkownika)
+        nowy_uzytkownik.wprowadz_text_do_telefon_xpath(self.driver, telefon_uzytkownika)
         nowy_uzytkownik.kliknij_jezyk_polski_xpath(self.driver)
         nowy_uzytkownik.kliknij_aktywny_nie_xpath(self.driver)
         nowy_uzytkownik.kliknij_regulamin_zaakceptowany_tak_xpath(self.driver)
@@ -301,11 +301,11 @@ class tests(unittest.TestCase):
         uzytkownicy.nacisnij_enter_na_dodaj_przycisk(self.driver)
 
         ############# Nowy Uzytkownik ######################
-        user_number = str(random.randint(0, 10000000))
-        user_name = 'test' + user_number
-        user_name_last_name = user_name + ' ' + user_name
-        user_email = user_name + '@o2.pl'
-        user_telefon_number = '123456789'
+        numer_uzytkownika = str(random.randint(0, 10000000))
+        imie_uzytkownika = 'test' + numer_uzytkownika
+        imie_i_nazwisko_uzytkownika = imie_uzytkownika + ' ' + imie_uzytkownika
+        email_uzytkownika = imie_uzytkownika + '@o2.pl'
+        telefon_uzytkownika = '123456789'
         self.assertTrue(
             nowy_uzytkownik.sprawdz_logo_utworz_uzytkownik(self.driver, u'Użytkownik > Utwórz')
         )
@@ -315,10 +315,10 @@ class tests(unittest.TestCase):
         self.assertTrue(
             nowy_uzytkownik.sprawdz_anuluj_przycisk(self.driver)
         )
-        nowy_uzytkownik.wprowadz_text_do_nazwa_uzytkownika_xpath(self.driver, user_name)
-        nowy_uzytkownik.wprowadz_text_do_email_xpath(self.driver, user_email)
-        nowy_uzytkownik.wprowadz_text_do_imie_i_nazwisko_xpath(self.driver, user_name_last_name)
-        nowy_uzytkownik.wprowadz_text_do_telefon_xpath(self.driver, user_telefon_number)
+        nowy_uzytkownik.wprowadz_text_do_nazwa_uzytkownika_xpath(self.driver, imie_uzytkownika)
+        nowy_uzytkownik.wprowadz_text_do_email_xpath(self.driver, email_uzytkownika)
+        nowy_uzytkownik.wprowadz_text_do_imie_i_nazwisko_xpath(self.driver, imie_i_nazwisko_uzytkownika)
+        nowy_uzytkownik.wprowadz_text_do_telefon_xpath(self.driver, telefon_uzytkownika)
         nowy_uzytkownik.kliknij_jezyk_polski_xpath(self.driver)
         nowy_uzytkownik.kliknij_aktywny_tak_xpath(self.driver)
         nowy_uzytkownik.kliknij_regulamin_zaakceptowany_nie_xpath(self.driver)

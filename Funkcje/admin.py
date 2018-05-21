@@ -113,6 +113,7 @@ def sprawdz_admin_ustawienia_aplikacji_tabela(driver_instance):
     )
     return elem
 
+
 def sprawdz_admin_ustawienia_firmy_tabela(driver_instance):
     elem = poczekaj_na_widocznosc_elementu(
         driver_instance=driver_instance,
@@ -120,10 +121,10 @@ def sprawdz_admin_ustawienia_firmy_tabela(driver_instance):
     )
     return elem
 
+
 def sprawdz_admin_ustawienia_sekcji_meta_tabela(driver_instance):
     elem = poczekaj_na_widocznosc_elementu(
         driver_instance=driver_instance,
         xpath=__admin_ustawienia_sekcji_meta_tabela
     )
     return elem
-

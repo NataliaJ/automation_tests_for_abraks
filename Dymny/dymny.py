@@ -283,6 +283,7 @@ class tests(unittest.TestCase):
         self.assertTrue(
             admin.sprawdz_admin_ustawienia_sekcji_meta_tabela(self.driver)
         )
+        ############## Wylogowanie ###############
         logowanie.nacisnij_enter_na_wyloguj_przycisk(self.driver)
         self.assertTrue(
             logowanie.sprawdz_czy_gorne_logo_pasek_jest_widoczne(self.driver)
